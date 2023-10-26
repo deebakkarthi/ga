@@ -58,6 +58,12 @@ class BinaryTree:
     def __len__(self):
         return self._size
 
+    def _height(self, p):
+        if self.is_leaf(p):
+            return 0
+        else:
+            return 1 + max(self._height(c) for c in self.children(p))
+
     def root(self):
         """Return root position"""
         return self._make_position(self._root)
@@ -116,18 +122,13 @@ class BinaryTree:
         if self.right(p) is not None:
             yield self.right(p)
 
-    def _height(self, p):
-        if self.is_leaf(p):
-            return 0
-        else:
-            return 1 + max(self._height(c) for c in self.children(p))
 
     def height(self, p=None):
         if p is None:
             p = self.root()
         return self._height(p)
 
-    def _add_root(self, e):
+    def add_root(self, e):
         """Place an element e as the root of an empty tree and return
         the new Position
         raise ValueError if tree is non-empty"""
@@ -137,7 +138,7 @@ class BinaryTree:
         self._root = self._Node(e)
         return self._make_position(self._root)
 
-    def _add_left(self, p: Position, e):
+    def add_left(self, p: Position, e):
         """Add new child to position p
         raise ValueError if there is already a child"""
         node = self._validate(p)
@@ -146,7 +147,7 @@ class BinaryTree:
         node._left = self._Node(e)
         return self._make_position(node._left)
 
-    def _add_right(self, p: Position, e):
+    def add_right(self, p: Position, e):
         """Add new child to position p
         raise ValueError if there is already a child"""
         node = self._validate(p)
@@ -155,14 +156,14 @@ class BinaryTree:
         node._right = self._Node(e)
         return self._make_position(node._right)
 
-    def _replace(self, p: Position, e):
+    def replace(self, p: Position, e):
         """Replace the element of p and return the old one"""
         node = self._validate(p)
         old = node._element
         node._element = e
         return old
 
-    def _delete(self, p: Position):
+    def delete(self, p: Position):
         """Delete and replace with p's child
         return p's element
         """
@@ -189,7 +190,7 @@ class BinaryTree:
         node._parent = node
         return node._element
 
-    def _attach(self, p: Position, t1: BinaryTree, t2: BinaryTree):
+    def attach(self, p: Position, t1: BinaryTree, t2: BinaryTree):
         node = self._validate(p)
         if not self.is_leaf(p):
             raise ValueError("p must be a leaf")

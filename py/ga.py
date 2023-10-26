@@ -7,14 +7,18 @@ import numpy as np
 
 LEAF_PROB = 0.1
 
+
 class Node:
-    def __init__(self, parent = None,
-                 lchild = None,
-                 rchild = None,
-                 is_leaf = False, 
-                 feature = None, 
-                 label = None,
-                 target = None) -> None:
+    def __init__(
+        self,
+        parent=None,
+        lchild=None,
+        rchild=None,
+        is_leaf=False,
+        feature=None,
+        label=None,
+        target=None,
+    ) -> None:
         self.parent = parent
         self.lchild = lchild
         self.rchild = rchild
@@ -41,6 +45,7 @@ class Node:
             self.rchild = child
         return
 
+
 def dtree_empty_create(max_depth: int, leaf_prob: float):
     curr_depth = 0
     root = Node()
@@ -49,8 +54,8 @@ def dtree_empty_create(max_depth: int, leaf_prob: float):
         curr = q.popleft()
         # Add 2 children
         for _ in range(2):
-            tmp : Node
-            if curr.depth < max_depth-1 and (random.random() > leaf_prob):
+            tmp: Node
+            if curr.depth < max_depth - 1 and (random.random() > leaf_prob):
                 tmp = Node(parent=curr, is_leaf=False)
                 curr.add_child(tmp)
                 q.append(tmp)
@@ -74,6 +79,7 @@ def evaluate(root: Node, row):
             else:
                 curr = curr.rchild
 
+
 def dtree_create(feature_dict, label, max_depth):
     """
     Returns a randomly generated decision tree
@@ -93,7 +99,8 @@ def dtree_create(feature_dict, label, max_depth):
         dtree: Node
             Root node of the decision tree
     """
-    root = dtree_empty_create(max_depth, LEAF_PROB) 
+    root = dtree_empty_create(max_depth, LEAF_PROB)
+
     def dfs(node: Node):
         if node:
             if node.is_leaf:
@@ -104,45 +111,52 @@ def dtree_create(feature_dict, label, max_depth):
                 while tmp == label:
                     tmp = random.choice(list(feature_dict.keys()))
                 node.feature = tmp
-                node.target =  random.choice(feature_dict[tmp])
+                node.target = random.choice(feature_dict[tmp])
             if node.lchild:
                 dfs(node.lchild)
             if node.rchild:
                 dfs(node.rchild)
+
     dfs(root)
     return root
 
-def dtree_print(root: Node, depth:int = 0):
+
+def dtree_print(root: Node, depth: int = 0):
     if root:
         if root.is_leaf:
-            print("\t"*depth, root.label)
+            print("\t" * depth, root.label)
         else:
-            print("\t"*depth, f"{root.feature} == {root.target}")
+            print("\t" * depth, f"{root.feature} == {root.target}")
         if root.lchild:
-            dtree_print(root.lchild, depth+1)
+            dtree_print(root.lchild, depth + 1)
         if root.rchild:
-            dtree_print(root.rchild, depth+1)
+            dtree_print(root.rchild, depth + 1)
     return
 
+
 def dtree_height(root: Node):
-    def dfs(root:  Node):
-        if root.is_leaf :
+    def dfs(root: Node):
+        if root.is_leaf:
             return root.depth
         else:
             return max(dfs(root.lchild), dfs(root.rchild))
+
     return dfs(root)
+
 
 def dtree_rleaf(root: Node):
     curr = root
-    while curr and not curr.is_leaf :
+    while curr and not curr.is_leaf:
         if curr.rchild:
             curr = curr.rchild
         else:
             return curr
     return curr
 
+
 def dtree_len(root: Node):
     count = 0
+
     def dfs(root: Node):
         nonlocal count
         if root:
@@ -151,8 +165,10 @@ def dtree_len(root: Node):
             dfs(root.lchild)
         if root.rchild:
             dfs(root.rchild)
+
     dfs(root)
     return count
+
 
 def feature_dict_create(df: pd.DataFrame):
     """
@@ -171,6 +187,7 @@ def feature_dict_create(df: pd.DataFrame):
         feature_dict[col] = df[col].unique().tolist()
     return feature_dict
 
+
 def fitness(root, df: pd.DataFrame, label: str):
     """
     Returns accuracy
@@ -180,7 +197,8 @@ def fitness(root, df: pd.DataFrame, label: str):
         tmp = evaluate(root, row)
         if tmp == getattr(row, label):
             correct += 1
-    return  correct / len(df)
+    return correct / len(df)
+
 
 def selection(population, fitness):
     """
@@ -194,6 +212,7 @@ def selection(population, fitness):
             mating_pool.append(v)
     return mating_pool
 
+
 def crossover(a, b):
     def inorder(root: Node, replace_prob: float):
         if random.random() < replace_prob:
@@ -203,6 +222,7 @@ def crossover(a, b):
                 inorder(root.lchild, replace_prob)
             if root.rchild:
                 inorder(root.rchild, replace_prob)
+
     replace_prob = 0.3
     print(replace_prob)
     replace_a = inorder(a, replace_prob)
@@ -215,14 +235,16 @@ def crossover(a, b):
     print(replace_b)
     return
 
+
 def main():
     df = pd.read_csv("./play_tennis.csv")
     feature_dict = feature_dict_create(df)
     label = "Play"
-    max_depth =  6
+    max_depth = 6
     root = dtree_create(feature_dict, label, max_depth)
     dtree_print(root)
     print(f"Accuracy: {fitness(root, df, label):.2f}%")
+
 
 if __name__ == "__main__":
     main()
