@@ -1,0 +1,1589 @@
+2023-10-27 16:19:17,545:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-10-27 16:19:17,545:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-10-27 16:19:17,545:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-10-27 16:19:17,545:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-10-27 16:19:17,838:INFO:PyCaret ClassificationExperiment
+2023-10-27 16:19:17,838:INFO:Logging name: clf-default-name
+2023-10-27 16:19:17,838:INFO:ML Usecase: MLUsecase.CLASSIFICATION
+2023-10-27 16:19:17,838:INFO:version 3.1.0
+2023-10-27 16:19:17,838:INFO:Initializing setup()
+2023-10-27 16:19:17,838:INFO:self.USI: 1fc8
+2023-10-27 16:19:17,838:INFO:self._variable_keys: {'logging_param', 'is_multiclass', 'html_param', 'data', 'pipeline', 'idx', 'log_plots_param', '_ml_usecase', 'y', 'gpu_n_jobs_param', 'X', 'X_train', 'seed', 'fold_shuffle_param', 'fold_groups_param', 'y_test', 'fold_generator', 'n_jobs_param', 'target_param', 'gpu_param', 'memory', 'fix_imbalance', '_available_plots', 'y_train', 'USI', 'exp_id', 'X_test', 'exp_name_log'}
+2023-10-27 16:19:17,838:INFO:Checking environment
+2023-10-27 16:19:17,838:INFO:python_version: 3.8.18
+2023-10-27 16:19:17,838:INFO:python_build: ('default', 'Sep 11 2023 08:17:16')
+2023-10-27 16:19:17,838:INFO:machine: arm64
+2023-10-27 16:19:17,838:INFO:platform: macOS-14.0-arm64-arm-64bit
+2023-10-27 16:19:17,838:INFO:Memory: svmem(total=8589934592, available=3093757952, percent=64.0, used=4365533184, free=27623424, active=3084713984, inactive=3028566016, wired=1280819200)
+2023-10-27 16:19:17,838:INFO:Physical Core: 8
+2023-10-27 16:19:17,838:INFO:Logical Core: 8
+2023-10-27 16:19:17,838:INFO:Checking libraries
+2023-10-27 16:19:17,838:INFO:System:
+2023-10-27 16:19:17,838:INFO:    python: 3.8.18 (default, Sep 11 2023, 08:17:16)  [Clang 14.0.6 ]
+2023-10-27 16:19:17,838:INFO:executable: /Users/deebakkarthi/.local/share/conda/envs/pycaret/bin/python
+2023-10-27 16:19:17,838:INFO:   machine: macOS-14.0-arm64-arm-64bit
+2023-10-27 16:19:17,838:INFO:PyCaret required dependencies:
+2023-10-27 16:19:17,864:INFO:                 pip: 23.3
+2023-10-27 16:19:17,864:INFO:          setuptools: 68.0.0
+2023-10-27 16:19:17,864:INFO:             pycaret: 3.1.0
+2023-10-27 16:19:17,864:INFO:             IPython: 8.12.0
+2023-10-27 16:19:17,864:INFO:          ipywidgets: 8.1.1
+2023-10-27 16:19:17,864:INFO:                tqdm: 4.66.1
+2023-10-27 16:19:17,865:INFO:               numpy: 1.23.5
+2023-10-27 16:19:17,865:INFO:              pandas: 1.5.3
+2023-10-27 16:19:17,865:INFO:              jinja2: 3.1.2
+2023-10-27 16:19:17,865:INFO:               scipy: 1.10.1
+2023-10-27 16:19:17,865:INFO:              joblib: 1.3.2
+2023-10-27 16:19:17,865:INFO:             sklearn: 1.2.2
+2023-10-27 16:19:17,865:INFO:                pyod: 1.1.1
+2023-10-27 16:19:17,865:INFO:            imblearn: 0.11.0
+2023-10-27 16:19:17,865:INFO:   category_encoders: 2.6.2
+2023-10-27 16:19:17,865:INFO:            lightgbm: 4.1.0
+2023-10-27 16:19:17,865:INFO:               numba: 0.58.1
+2023-10-27 16:19:17,865:INFO:            requests: 2.31.0
+2023-10-27 16:19:17,865:INFO:          matplotlib: 3.7.3
+2023-10-27 16:19:17,865:INFO:          scikitplot: 0.3.7
+2023-10-27 16:19:17,865:INFO:         yellowbrick: 1.5
+2023-10-27 16:19:17,865:INFO:              plotly: 5.18.0
+2023-10-27 16:19:17,865:INFO:    plotly-resampler: Not installed
+2023-10-27 16:19:17,865:INFO:             kaleido: 0.2.1
+2023-10-27 16:19:17,865:INFO:           schemdraw: 0.15
+2023-10-27 16:19:17,865:INFO:         statsmodels: 0.14.0
+2023-10-27 16:19:17,865:INFO:              sktime: 0.21.1
+2023-10-27 16:19:17,865:INFO:               tbats: 1.1.3
+2023-10-27 16:19:17,865:INFO:            pmdarima: 2.0.4
+2023-10-27 16:19:17,865:INFO:              psutil: 5.9.6
+2023-10-27 16:19:17,865:INFO:          markupsafe: 2.1.3
+2023-10-27 16:19:17,865:INFO:             pickle5: Not installed
+2023-10-27 16:19:17,865:INFO:         cloudpickle: 3.0.0
+2023-10-27 16:19:17,865:INFO:         deprecation: 2.1.0
+2023-10-27 16:19:17,865:INFO:              xxhash: 3.4.1
+2023-10-27 16:19:17,865:INFO:           wurlitzer: 3.0.3
+2023-10-27 16:19:17,865:INFO:PyCaret optional dependencies:
+2023-10-27 16:19:17,873:INFO:                shap: Not installed
+2023-10-27 16:19:17,873:INFO:           interpret: Not installed
+2023-10-27 16:19:17,873:INFO:                umap: Not installed
+2023-10-27 16:19:17,873:INFO:     ydata_profiling: Not installed
+2023-10-27 16:19:17,873:INFO:  explainerdashboard: Not installed
+2023-10-27 16:19:17,873:INFO:             autoviz: Not installed
+2023-10-27 16:19:17,873:INFO:           fairlearn: Not installed
+2023-10-27 16:19:17,873:INFO:          deepchecks: Not installed
+2023-10-27 16:19:17,873:INFO:             xgboost: Not installed
+2023-10-27 16:19:17,873:INFO:            catboost: Not installed
+2023-10-27 16:19:17,873:INFO:              kmodes: Not installed
+2023-10-27 16:19:17,873:INFO:             mlxtend: Not installed
+2023-10-27 16:19:17,873:INFO:       statsforecast: Not installed
+2023-10-27 16:19:17,873:INFO:        tune_sklearn: Not installed
+2023-10-27 16:19:17,873:INFO:                 ray: Not installed
+2023-10-27 16:19:17,874:INFO:            hyperopt: Not installed
+2023-10-27 16:19:17,874:INFO:              optuna: Not installed
+2023-10-27 16:19:17,874:INFO:               skopt: Not installed
+2023-10-27 16:19:17,874:INFO:              mlflow: Not installed
+2023-10-27 16:19:17,874:INFO:              gradio: Not installed
+2023-10-27 16:19:17,874:INFO:             fastapi: Not installed
+2023-10-27 16:19:17,874:INFO:             uvicorn: Not installed
+2023-10-27 16:19:17,874:INFO:              m2cgen: Not installed
+2023-10-27 16:19:17,874:INFO:           evidently: Not installed
+2023-10-27 16:19:17,874:INFO:               fugue: Not installed
+2023-10-27 16:19:17,874:INFO:           streamlit: Not installed
+2023-10-27 16:19:17,874:INFO:             prophet: Not installed
+2023-10-27 16:19:17,874:INFO:None
+2023-10-27 16:19:17,874:INFO:Set up data.
+2023-10-27 16:19:27,916:INFO:PyCaret ClassificationExperiment
+2023-10-27 16:19:27,916:INFO:Logging name: clf-default-name
+2023-10-27 16:19:27,916:INFO:ML Usecase: MLUsecase.CLASSIFICATION
+2023-10-27 16:19:27,916:INFO:version 3.1.0
+2023-10-27 16:19:27,916:INFO:Initializing setup()
+2023-10-27 16:19:27,916:INFO:self.USI: da36
+2023-10-27 16:19:27,916:INFO:self._variable_keys: {'logging_param', 'is_multiclass', 'html_param', 'data', 'pipeline', 'idx', 'log_plots_param', '_ml_usecase', 'y', 'gpu_n_jobs_param', 'X', 'X_train', 'seed', 'fold_shuffle_param', 'fold_groups_param', 'y_test', 'fold_generator', 'n_jobs_param', 'target_param', 'gpu_param', 'memory', 'fix_imbalance', '_available_plots', 'y_train', 'USI', 'exp_id', 'X_test', 'exp_name_log'}
+2023-10-27 16:19:27,916:INFO:Checking environment
+2023-10-27 16:19:27,916:INFO:python_version: 3.8.18
+2023-10-27 16:19:27,916:INFO:python_build: ('default', 'Sep 11 2023 08:17:16')
+2023-10-27 16:19:27,916:INFO:machine: arm64
+2023-10-27 16:19:27,916:INFO:platform: macOS-14.0-arm64-arm-64bit
+2023-10-27 16:19:27,917:INFO:Memory: svmem(total=8589934592, available=3082911744, percent=64.1, used=4378066944, free=38748160, active=3059466240, inactive=3001073664, wired=1318600704)
+2023-10-27 16:19:27,917:INFO:Physical Core: 8
+2023-10-27 16:19:27,917:INFO:Logical Core: 8
+2023-10-27 16:19:27,917:INFO:Checking libraries
+2023-10-27 16:19:27,917:INFO:System:
+2023-10-27 16:19:27,917:INFO:    python: 3.8.18 (default, Sep 11 2023, 08:17:16)  [Clang 14.0.6 ]
+2023-10-27 16:19:27,917:INFO:executable: /Users/deebakkarthi/.local/share/conda/envs/pycaret/bin/python
+2023-10-27 16:19:27,917:INFO:   machine: macOS-14.0-arm64-arm-64bit
+2023-10-27 16:19:27,917:INFO:PyCaret required dependencies:
+2023-10-27 16:19:27,917:INFO:                 pip: 23.3
+2023-10-27 16:19:27,917:INFO:          setuptools: 68.0.0
+2023-10-27 16:19:27,917:INFO:             pycaret: 3.1.0
+2023-10-27 16:19:27,917:INFO:             IPython: 8.12.0
+2023-10-27 16:19:27,917:INFO:          ipywidgets: 8.1.1
+2023-10-27 16:19:27,917:INFO:                tqdm: 4.66.1
+2023-10-27 16:19:27,917:INFO:               numpy: 1.23.5
+2023-10-27 16:19:27,917:INFO:              pandas: 1.5.3
+2023-10-27 16:19:27,917:INFO:              jinja2: 3.1.2
+2023-10-27 16:19:27,917:INFO:               scipy: 1.10.1
+2023-10-27 16:19:27,917:INFO:              joblib: 1.3.2
+2023-10-27 16:19:27,917:INFO:             sklearn: 1.2.2
+2023-10-27 16:19:27,917:INFO:                pyod: 1.1.1
+2023-10-27 16:19:27,917:INFO:            imblearn: 0.11.0
+2023-10-27 16:19:27,917:INFO:   category_encoders: 2.6.2
+2023-10-27 16:19:27,917:INFO:            lightgbm: 4.1.0
+2023-10-27 16:19:27,917:INFO:               numba: 0.58.1
+2023-10-27 16:19:27,917:INFO:            requests: 2.31.0
+2023-10-27 16:19:27,917:INFO:          matplotlib: 3.7.3
+2023-10-27 16:19:27,917:INFO:          scikitplot: 0.3.7
+2023-10-27 16:19:27,917:INFO:         yellowbrick: 1.5
+2023-10-27 16:19:27,917:INFO:              plotly: 5.18.0
+2023-10-27 16:19:27,917:INFO:    plotly-resampler: Not installed
+2023-10-27 16:19:27,917:INFO:             kaleido: 0.2.1
+2023-10-27 16:19:27,917:INFO:           schemdraw: 0.15
+2023-10-27 16:19:27,917:INFO:         statsmodels: 0.14.0
+2023-10-27 16:19:27,917:INFO:              sktime: 0.21.1
+2023-10-27 16:19:27,917:INFO:               tbats: 1.1.3
+2023-10-27 16:19:27,917:INFO:            pmdarima: 2.0.4
+2023-10-27 16:19:27,917:INFO:              psutil: 5.9.6
+2023-10-27 16:19:27,917:INFO:          markupsafe: 2.1.3
+2023-10-27 16:19:27,917:INFO:             pickle5: Not installed
+2023-10-27 16:19:27,917:INFO:         cloudpickle: 3.0.0
+2023-10-27 16:19:27,917:INFO:         deprecation: 2.1.0
+2023-10-27 16:19:27,918:INFO:              xxhash: 3.4.1
+2023-10-27 16:19:27,918:INFO:           wurlitzer: 3.0.3
+2023-10-27 16:19:27,918:INFO:PyCaret optional dependencies:
+2023-10-27 16:19:27,918:INFO:                shap: Not installed
+2023-10-27 16:19:27,918:INFO:           interpret: Not installed
+2023-10-27 16:19:27,918:INFO:                umap: Not installed
+2023-10-27 16:19:27,918:INFO:     ydata_profiling: Not installed
+2023-10-27 16:19:27,918:INFO:  explainerdashboard: Not installed
+2023-10-27 16:19:27,918:INFO:             autoviz: Not installed
+2023-10-27 16:19:27,918:INFO:           fairlearn: Not installed
+2023-10-27 16:19:27,918:INFO:          deepchecks: Not installed
+2023-10-27 16:19:27,918:INFO:             xgboost: Not installed
+2023-10-27 16:19:27,918:INFO:            catboost: Not installed
+2023-10-27 16:19:27,918:INFO:              kmodes: Not installed
+2023-10-27 16:19:27,918:INFO:             mlxtend: Not installed
+2023-10-27 16:19:27,918:INFO:       statsforecast: Not installed
+2023-10-27 16:19:27,918:INFO:        tune_sklearn: Not installed
+2023-10-27 16:19:27,918:INFO:                 ray: Not installed
+2023-10-27 16:19:27,918:INFO:            hyperopt: Not installed
+2023-10-27 16:19:27,918:INFO:              optuna: Not installed
+2023-10-27 16:19:27,918:INFO:               skopt: Not installed
+2023-10-27 16:19:27,918:INFO:              mlflow: Not installed
+2023-10-27 16:19:27,918:INFO:              gradio: Not installed
+2023-10-27 16:19:27,918:INFO:             fastapi: Not installed
+2023-10-27 16:19:27,918:INFO:             uvicorn: Not installed
+2023-10-27 16:19:27,918:INFO:              m2cgen: Not installed
+2023-10-27 16:19:27,918:INFO:           evidently: Not installed
+2023-10-27 16:19:27,918:INFO:               fugue: Not installed
+2023-10-27 16:19:27,918:INFO:           streamlit: Not installed
+2023-10-27 16:19:27,918:INFO:             prophet: Not installed
+2023-10-27 16:19:27,918:INFO:None
+2023-10-27 16:19:27,918:INFO:Set up data.
+2023-10-27 16:19:27,951:INFO:Set up folding strategy.
+2023-10-27 16:19:27,951:INFO:Set up train/test split.
+2023-10-27 16:19:28,016:INFO:Set up index.
+2023-10-27 16:19:28,018:INFO:Assigning column types.
+2023-10-27 16:19:28,036:INFO:Engine successfully changes for model 'lr' to 'sklearn'.
+2023-10-27 16:19:28,068:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2023-10-27 16:19:28,071:INFO:Engine for model 'rbfsvm' has not been set explicitly, hence returning None.
+2023-10-27 16:19:28,092:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-10-27 16:19:28,092:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-10-27 16:19:28,121:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2023-10-27 16:19:28,121:INFO:Engine for model 'rbfsvm' has not been set explicitly, hence returning None.
+2023-10-27 16:19:28,139:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-10-27 16:19:28,139:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-10-27 16:19:28,139:INFO:Engine successfully changes for model 'knn' to 'sklearn'.
+2023-10-27 16:19:28,168:INFO:Engine for model 'rbfsvm' has not been set explicitly, hence returning None.
+2023-10-27 16:19:28,186:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-10-27 16:19:28,186:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-10-27 16:19:28,215:INFO:Engine for model 'rbfsvm' has not been set explicitly, hence returning None.
+2023-10-27 16:19:28,233:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-10-27 16:19:28,233:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-10-27 16:19:28,233:INFO:Engine successfully changes for model 'rbfsvm' to 'sklearn'.
+2023-10-27 16:19:28,280:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-10-27 16:19:28,280:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-10-27 16:19:28,327:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-10-27 16:19:28,327:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-10-27 16:19:28,328:INFO:Preparing preprocessing pipeline...
+2023-10-27 16:19:28,334:INFO:Set up simple imputation.
+2023-10-27 16:19:28,386:INFO:Finished creating preprocessing pipeline.
+2023-10-27 16:19:28,390:INFO:Pipeline: Pipeline(memory=FastMemory(location=/var/folders/z9/204byscd3zd4t17t3b7r171m0000gn/T/joblib),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(exclude=None,
+                                    include=['Location', 'MinTemp', 'MaxTemp',
+                                             'Rainfall', 'Evaporation',
+                                             'Sunshine', 'WindGustDir',
+                                             'WindGustSpeed', 'WindDir9am',
+                                             'WindDir3pm', 'WindSpeed9am',
+                                             'WindSpeed3pm', 'Humidity3pm',
+                                             'Pressure9am', 'Pressu...
+                                                              copy=True,
+                                                              fill_value=None,
+                                                              keep_empty_features=False,
+                                                              missing_values=nan,
+                                                              strategy='mean',
+                                                              verbose='deprecated'))),
+                ('categorical_imputer',
+                 TransformerWrapper(exclude=None, include=[],
+                                    transformer=SimpleImputer(add_indicator=False,
+                                                              copy=True,
+                                                              fill_value=None,
+                                                              keep_empty_features=False,
+                                                              missing_values=nan,
+                                                              strategy='most_frequent',
+                                                              verbose='deprecated')))],
+         verbose=False)
+2023-10-27 16:19:28,390:INFO:Creating final display dataframe.
+2023-10-27 16:19:28,534:INFO:Setup _display_container:                     Description             Value
+0                    Session id               123
+1                        Target      RainTomorrow
+2                   Target type            Binary
+3           Original data shape      (136653, 19)
+4        Transformed data shape      (136653, 19)
+5   Transformed train set shape       (95657, 19)
+6    Transformed test set shape       (40996, 19)
+7              Numeric features                18
+8                    Preprocess              True
+9               Imputation type            simple
+10           Numeric imputation              mean
+11       Categorical imputation              mode
+12               Fold Generator   StratifiedKFold
+13                  Fold Number                10
+14                     CPU Jobs                -1
+15                      Use GPU             False
+16               Log Experiment             False
+17              Experiment Name  clf-default-name
+18                          USI              da36
+2023-10-27 16:19:28,590:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-10-27 16:19:28,591:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-10-27 16:19:28,641:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-10-27 16:19:28,642:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-10-27 16:19:28,642:INFO:setup() successfully completed in 0.73s...............
+2023-10-27 16:20:06,761:INFO:PyCaret ClassificationExperiment
+2023-10-27 16:20:06,761:INFO:Logging name: clf-default-name
+2023-10-27 16:20:06,761:INFO:ML Usecase: MLUsecase.CLASSIFICATION
+2023-10-27 16:20:06,761:INFO:version 3.1.0
+2023-10-27 16:20:06,761:INFO:Initializing setup()
+2023-10-27 16:20:06,761:INFO:self.USI: 6935
+2023-10-27 16:20:06,761:INFO:self._variable_keys: {'logging_param', 'is_multiclass', 'html_param', 'data', 'pipeline', 'idx', 'log_plots_param', '_ml_usecase', 'y', 'gpu_n_jobs_param', 'X', 'X_train', 'seed', 'fold_shuffle_param', 'fold_groups_param', 'y_test', 'fold_generator', 'n_jobs_param', 'target_param', 'gpu_param', 'memory', 'fix_imbalance', '_available_plots', 'y_train', 'USI', 'exp_id', 'X_test', 'exp_name_log'}
+2023-10-27 16:20:06,761:INFO:Checking environment
+2023-10-27 16:20:06,761:INFO:python_version: 3.8.18
+2023-10-27 16:20:06,761:INFO:python_build: ('default', 'Sep 11 2023 08:17:16')
+2023-10-27 16:20:06,761:INFO:machine: arm64
+2023-10-27 16:20:06,761:INFO:platform: macOS-14.0-arm64-arm-64bit
+2023-10-27 16:20:06,761:INFO:Memory: svmem(total=8589934592, available=3110469632, percent=63.8, used=4313956352, free=140427264, active=2981953536, inactive=2964815872, wired=1332002816)
+2023-10-27 16:20:06,761:INFO:Physical Core: 8
+2023-10-27 16:20:06,761:INFO:Logical Core: 8
+2023-10-27 16:20:06,761:INFO:Checking libraries
+2023-10-27 16:20:06,761:INFO:System:
+2023-10-27 16:20:06,761:INFO:    python: 3.8.18 (default, Sep 11 2023, 08:17:16)  [Clang 14.0.6 ]
+2023-10-27 16:20:06,761:INFO:executable: /Users/deebakkarthi/.local/share/conda/envs/pycaret/bin/python
+2023-10-27 16:20:06,761:INFO:   machine: macOS-14.0-arm64-arm-64bit
+2023-10-27 16:20:06,762:INFO:PyCaret required dependencies:
+2023-10-27 16:20:06,762:INFO:                 pip: 23.3
+2023-10-27 16:20:06,762:INFO:          setuptools: 68.0.0
+2023-10-27 16:20:06,762:INFO:             pycaret: 3.1.0
+2023-10-27 16:20:06,762:INFO:             IPython: 8.12.0
+2023-10-27 16:20:06,762:INFO:          ipywidgets: 8.1.1
+2023-10-27 16:20:06,762:INFO:                tqdm: 4.66.1
+2023-10-27 16:20:06,762:INFO:               numpy: 1.23.5
+2023-10-27 16:20:06,762:INFO:              pandas: 1.5.3
+2023-10-27 16:20:06,762:INFO:              jinja2: 3.1.2
+2023-10-27 16:20:06,762:INFO:               scipy: 1.10.1
+2023-10-27 16:20:06,762:INFO:              joblib: 1.3.2
+2023-10-27 16:20:06,762:INFO:             sklearn: 1.2.2
+2023-10-27 16:20:06,762:INFO:                pyod: 1.1.1
+2023-10-27 16:20:06,762:INFO:            imblearn: 0.11.0
+2023-10-27 16:20:06,762:INFO:   category_encoders: 2.6.2
+2023-10-27 16:20:06,762:INFO:            lightgbm: 4.1.0
+2023-10-27 16:20:06,762:INFO:               numba: 0.58.1
+2023-10-27 16:20:06,762:INFO:            requests: 2.31.0
+2023-10-27 16:20:06,762:INFO:          matplotlib: 3.7.3
+2023-10-27 16:20:06,762:INFO:          scikitplot: 0.3.7
+2023-10-27 16:20:06,762:INFO:         yellowbrick: 1.5
+2023-10-27 16:20:06,762:INFO:              plotly: 5.18.0
+2023-10-27 16:20:06,762:INFO:    plotly-resampler: Not installed
+2023-10-27 16:20:06,762:INFO:             kaleido: 0.2.1
+2023-10-27 16:20:06,762:INFO:           schemdraw: 0.15
+2023-10-27 16:20:06,762:INFO:         statsmodels: 0.14.0
+2023-10-27 16:20:06,762:INFO:              sktime: 0.21.1
+2023-10-27 16:20:06,762:INFO:               tbats: 1.1.3
+2023-10-27 16:20:06,762:INFO:            pmdarima: 2.0.4
+2023-10-27 16:20:06,762:INFO:              psutil: 5.9.6
+2023-10-27 16:20:06,762:INFO:          markupsafe: 2.1.3
+2023-10-27 16:20:06,762:INFO:             pickle5: Not installed
+2023-10-27 16:20:06,762:INFO:         cloudpickle: 3.0.0
+2023-10-27 16:20:06,762:INFO:         deprecation: 2.1.0
+2023-10-27 16:20:06,762:INFO:              xxhash: 3.4.1
+2023-10-27 16:20:06,762:INFO:           wurlitzer: 3.0.3
+2023-10-27 16:20:06,762:INFO:PyCaret optional dependencies:
+2023-10-27 16:20:06,762:INFO:                shap: Not installed
+2023-10-27 16:20:06,762:INFO:           interpret: Not installed
+2023-10-27 16:20:06,762:INFO:                umap: Not installed
+2023-10-27 16:20:06,762:INFO:     ydata_profiling: Not installed
+2023-10-27 16:20:06,762:INFO:  explainerdashboard: Not installed
+2023-10-27 16:20:06,762:INFO:             autoviz: Not installed
+2023-10-27 16:20:06,762:INFO:           fairlearn: Not installed
+2023-10-27 16:20:06,763:INFO:          deepchecks: Not installed
+2023-10-27 16:20:06,763:INFO:             xgboost: Not installed
+2023-10-27 16:20:06,763:INFO:            catboost: Not installed
+2023-10-27 16:20:06,763:INFO:              kmodes: Not installed
+2023-10-27 16:20:06,763:INFO:             mlxtend: Not installed
+2023-10-27 16:20:06,763:INFO:       statsforecast: Not installed
+2023-10-27 16:20:06,763:INFO:        tune_sklearn: Not installed
+2023-10-27 16:20:06,763:INFO:                 ray: Not installed
+2023-10-27 16:20:06,763:INFO:            hyperopt: Not installed
+2023-10-27 16:20:06,763:INFO:              optuna: Not installed
+2023-10-27 16:20:06,763:INFO:               skopt: Not installed
+2023-10-27 16:20:06,763:INFO:              mlflow: Not installed
+2023-10-27 16:20:06,763:INFO:              gradio: Not installed
+2023-10-27 16:20:06,763:INFO:             fastapi: Not installed
+2023-10-27 16:20:06,763:INFO:             uvicorn: Not installed
+2023-10-27 16:20:06,763:INFO:              m2cgen: Not installed
+2023-10-27 16:20:06,763:INFO:           evidently: Not installed
+2023-10-27 16:20:06,763:INFO:               fugue: Not installed
+2023-10-27 16:20:06,763:INFO:           streamlit: Not installed
+2023-10-27 16:20:06,763:INFO:             prophet: Not installed
+2023-10-27 16:20:06,763:INFO:None
+2023-10-27 16:20:06,763:INFO:Set up data.
+2023-10-27 16:20:06,791:INFO:Set up folding strategy.
+2023-10-27 16:20:06,791:INFO:Set up train/test split.
+2023-10-27 16:20:06,842:INFO:Set up index.
+2023-10-27 16:20:06,844:INFO:Assigning column types.
+2023-10-27 16:20:06,862:INFO:Engine successfully changes for model 'lr' to 'sklearn'.
+2023-10-27 16:20:06,891:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2023-10-27 16:20:06,891:INFO:Engine for model 'rbfsvm' has not been set explicitly, hence returning None.
+2023-10-27 16:20:06,909:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-10-27 16:20:06,909:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-10-27 16:20:06,938:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2023-10-27 16:20:06,939:INFO:Engine for model 'rbfsvm' has not been set explicitly, hence returning None.
+2023-10-27 16:20:06,957:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-10-27 16:20:06,958:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-10-27 16:20:06,958:INFO:Engine successfully changes for model 'knn' to 'sklearn'.
+2023-10-27 16:20:06,987:INFO:Engine for model 'rbfsvm' has not been set explicitly, hence returning None.
+2023-10-27 16:20:07,004:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-10-27 16:20:07,004:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-10-27 16:20:07,034:INFO:Engine for model 'rbfsvm' has not been set explicitly, hence returning None.
+2023-10-27 16:20:07,052:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-10-27 16:20:07,052:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-10-27 16:20:07,053:INFO:Engine successfully changes for model 'rbfsvm' to 'sklearn'.
+2023-10-27 16:20:07,100:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-10-27 16:20:07,100:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-10-27 16:20:07,148:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-10-27 16:20:07,148:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-10-27 16:20:07,148:INFO:Preparing preprocessing pipeline...
+2023-10-27 16:20:07,152:INFO:Set up simple imputation.
+2023-10-27 16:20:07,202:INFO:Finished creating preprocessing pipeline.
+2023-10-27 16:20:07,205:INFO:Pipeline: Pipeline(memory=FastMemory(location=/var/folders/z9/204byscd3zd4t17t3b7r171m0000gn/T/joblib),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(exclude=None,
+                                    include=['Location', 'MinTemp', 'MaxTemp',
+                                             'Rainfall', 'Evaporation',
+                                             'Sunshine', 'WindGustDir',
+                                             'WindGustSpeed', 'WindDir9am',
+                                             'WindDir3pm', 'WindSpeed9am',
+                                             'WindSpeed3pm', 'Humidity3pm',
+                                             'Pressure9am', 'Pressu...
+                                                              copy=True,
+                                                              fill_value=None,
+                                                              keep_empty_features=False,
+                                                              missing_values=nan,
+                                                              strategy='mean',
+                                                              verbose='deprecated'))),
+                ('categorical_imputer',
+                 TransformerWrapper(exclude=None, include=[],
+                                    transformer=SimpleImputer(add_indicator=False,
+                                                              copy=True,
+                                                              fill_value=None,
+                                                              keep_empty_features=False,
+                                                              missing_values=nan,
+                                                              strategy='most_frequent',
+                                                              verbose='deprecated')))],
+         verbose=False)
+2023-10-27 16:20:07,205:INFO:Creating final display dataframe.
+2023-10-27 16:20:07,349:INFO:Setup _display_container:                     Description             Value
+0                    Session id               123
+1                        Target      RainTomorrow
+2                   Target type            Binary
+3           Original data shape      (136653, 19)
+4        Transformed data shape      (136653, 19)
+5   Transformed train set shape       (95657, 19)
+6    Transformed test set shape       (40996, 19)
+7              Numeric features                18
+8                    Preprocess              True
+9               Imputation type            simple
+10           Numeric imputation              mean
+11       Categorical imputation              mode
+12               Fold Generator   StratifiedKFold
+13                  Fold Number                10
+14                     CPU Jobs                -1
+15                      Use GPU             False
+16               Log Experiment             False
+17              Experiment Name  clf-default-name
+18                          USI              6935
+2023-10-27 16:20:07,407:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-10-27 16:20:07,407:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-10-27 16:20:07,456:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-10-27 16:20:07,456:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-10-27 16:20:07,456:INFO:setup() successfully completed in 0.7s...............
+2023-10-27 16:20:18,558:INFO:Initializing compare_models()
+2023-10-27 16:20:18,558:INFO:compare_models(self=<pycaret.classification.oop.ClassificationExperiment object at 0x2871e9550>, include=None, fold=None, round=4, cross_validation=True, sort=Accuracy, n_select=1, budget_time=None, turbo=True, errors=ignore, fit_kwargs=None, groups=None, experiment_custom_tags=None, probability_threshold=None, verbose=True, parallel=None, caller_params={'self': <pycaret.classification.oop.ClassificationExperiment object at 0x2871e9550>, 'include': None, 'exclude': None, 'fold': None, 'round': 4, 'cross_validation': True, 'sort': 'Accuracy', 'n_select': 1, 'budget_time': None, 'turbo': True, 'errors': 'ignore', 'fit_kwargs': None, 'groups': None, 'experiment_custom_tags': None, 'probability_threshold': None, 'engine': None, 'verbose': True, 'parallel': None, '__class__': <class 'pycaret.classification.oop.ClassificationExperiment'>}, exclude=None)
+2023-10-27 16:20:18,558:INFO:Checking exceptions
+2023-10-27 16:20:18,575:INFO:Preparing display monitor
+2023-10-27 16:20:18,616:INFO:Initializing Logistic Regression
+2023-10-27 16:20:18,616:INFO:Total runtime is 3.9656956990559895e-06 minutes
+2023-10-27 16:20:18,619:INFO:SubProcess create_model() called ==================================
+2023-10-27 16:20:18,619:INFO:Initializing create_model()
+2023-10-27 16:20:18,620:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x2871e9550>, estimator=lr, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x1063a9bb0>, model_only=True, return_train_score=False, kwargs={})
+2023-10-27 16:20:18,620:INFO:Checking exceptions
+2023-10-27 16:20:18,620:INFO:Importing libraries
+2023-10-27 16:20:18,620:INFO:Copying training dataset
+2023-10-27 16:20:18,657:INFO:Defining folds
+2023-10-27 16:20:18,657:INFO:Declaring metric variables
+2023-10-27 16:20:18,670:INFO:Importing untrained model
+2023-10-27 16:20:18,674:INFO:Logistic Regression Imported successfully
+2023-10-27 16:20:18,679:INFO:Starting cross validation
+2023-10-27 16:20:18,681:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-10-27 16:20:39,169:INFO:Calculating mean and std
+2023-10-27 16:20:39,173:INFO:Creating metrics dataframe
+2023-10-27 16:20:39,179:INFO:Uploading results into container
+2023-10-27 16:20:39,179:INFO:Uploading model into container now
+2023-10-27 16:20:39,180:INFO:_master_model_container: 1
+2023-10-27 16:20:39,180:INFO:_display_container: 2
+2023-10-27 16:20:39,181:INFO:LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+                   intercept_scaling=1, l1_ratio=None, max_iter=1000,
+                   multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=123, solver='lbfgs', tol=0.0001, verbose=0,
+                   warm_start=False)
+2023-10-27 16:20:39,181:INFO:create_model() successfully completed......................................
+2023-10-27 16:20:39,283:INFO:SubProcess create_model() end ==================================
+2023-10-27 16:20:39,283:INFO:Creating metrics dataframe
+2023-10-27 16:20:39,289:INFO:Initializing K Neighbors Classifier
+2023-10-27 16:20:39,289:INFO:Total runtime is 0.3445516467094421 minutes
+2023-10-27 16:20:39,291:INFO:SubProcess create_model() called ==================================
+2023-10-27 16:20:39,291:INFO:Initializing create_model()
+2023-10-27 16:20:39,291:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x2871e9550>, estimator=knn, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x1063a9bb0>, model_only=True, return_train_score=False, kwargs={})
+2023-10-27 16:20:39,291:INFO:Checking exceptions
+2023-10-27 16:20:39,291:INFO:Importing libraries
+2023-10-27 16:20:39,291:INFO:Copying training dataset
+2023-10-27 16:20:39,329:INFO:Defining folds
+2023-10-27 16:20:39,329:INFO:Declaring metric variables
+2023-10-27 16:20:39,331:INFO:Importing untrained model
+2023-10-27 16:20:39,334:INFO:K Neighbors Classifier Imported successfully
+2023-10-27 16:20:39,338:INFO:Starting cross validation
+2023-10-27 16:20:39,339:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-10-27 16:21:03,600:INFO:Calculating mean and std
+2023-10-27 16:21:03,602:INFO:Creating metrics dataframe
+2023-10-27 16:21:03,605:INFO:Uploading results into container
+2023-10-27 16:21:03,605:INFO:Uploading model into container now
+2023-10-27 16:21:03,606:INFO:_master_model_container: 2
+2023-10-27 16:21:03,606:INFO:_display_container: 2
+2023-10-27 16:21:03,606:INFO:KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
+                     metric_params=None, n_jobs=-1, n_neighbors=5, p=2,
+                     weights='uniform')
+2023-10-27 16:21:03,606:INFO:create_model() successfully completed......................................
+2023-10-27 16:21:03,660:INFO:SubProcess create_model() end ==================================
+2023-10-27 16:21:03,660:INFO:Creating metrics dataframe
+2023-10-27 16:21:03,667:INFO:Initializing Naive Bayes
+2023-10-27 16:21:03,667:INFO:Total runtime is 0.7508490363756815 minutes
+2023-10-27 16:21:03,669:INFO:SubProcess create_model() called ==================================
+2023-10-27 16:21:03,669:INFO:Initializing create_model()
+2023-10-27 16:21:03,669:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x2871e9550>, estimator=nb, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x1063a9bb0>, model_only=True, return_train_score=False, kwargs={})
+2023-10-27 16:21:03,669:INFO:Checking exceptions
+2023-10-27 16:21:03,669:INFO:Importing libraries
+2023-10-27 16:21:03,669:INFO:Copying training dataset
+2023-10-27 16:21:03,693:INFO:Defining folds
+2023-10-27 16:21:03,693:INFO:Declaring metric variables
+2023-10-27 16:21:03,695:INFO:Importing untrained model
+2023-10-27 16:21:03,697:INFO:Naive Bayes Imported successfully
+2023-10-27 16:21:03,701:INFO:Starting cross validation
+2023-10-27 16:21:03,702:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-10-27 16:21:04,201:INFO:Calculating mean and std
+2023-10-27 16:21:04,204:INFO:Creating metrics dataframe
+2023-10-27 16:21:04,209:INFO:Uploading results into container
+2023-10-27 16:21:04,209:INFO:Uploading model into container now
+2023-10-27 16:21:04,210:INFO:_master_model_container: 3
+2023-10-27 16:21:04,210:INFO:_display_container: 2
+2023-10-27 16:21:04,210:INFO:GaussianNB(priors=None, var_smoothing=1e-09)
+2023-10-27 16:21:04,210:INFO:create_model() successfully completed......................................
+2023-10-27 16:21:04,284:INFO:SubProcess create_model() end ==================================
+2023-10-27 16:21:04,284:INFO:Creating metrics dataframe
+2023-10-27 16:21:04,291:INFO:Initializing Decision Tree Classifier
+2023-10-27 16:21:04,291:INFO:Total runtime is 0.7612624843915302 minutes
+2023-10-27 16:21:04,294:INFO:SubProcess create_model() called ==================================
+2023-10-27 16:21:04,294:INFO:Initializing create_model()
+2023-10-27 16:21:04,294:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x2871e9550>, estimator=dt, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x1063a9bb0>, model_only=True, return_train_score=False, kwargs={})
+2023-10-27 16:21:04,294:INFO:Checking exceptions
+2023-10-27 16:21:04,294:INFO:Importing libraries
+2023-10-27 16:21:04,294:INFO:Copying training dataset
+2023-10-27 16:21:04,319:INFO:Defining folds
+2023-10-27 16:21:04,319:INFO:Declaring metric variables
+2023-10-27 16:21:04,321:INFO:Importing untrained model
+2023-10-27 16:21:04,323:INFO:Decision Tree Classifier Imported successfully
+2023-10-27 16:21:04,327:INFO:Starting cross validation
+2023-10-27 16:21:04,327:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-10-27 16:21:07,668:INFO:Calculating mean and std
+2023-10-27 16:21:07,669:INFO:Creating metrics dataframe
+2023-10-27 16:21:07,672:INFO:Uploading results into container
+2023-10-27 16:21:07,673:INFO:Uploading model into container now
+2023-10-27 16:21:07,673:INFO:_master_model_container: 4
+2023-10-27 16:21:07,673:INFO:_display_container: 2
+2023-10-27 16:21:07,673:INFO:DecisionTreeClassifier(ccp_alpha=0.0, class_weight=None, criterion='gini',
+                       max_depth=None, max_features=None, max_leaf_nodes=None,
+                       min_impurity_decrease=0.0, min_samples_leaf=1,
+                       min_samples_split=2, min_weight_fraction_leaf=0.0,
+                       random_state=123, splitter='best')
+2023-10-27 16:21:07,673:INFO:create_model() successfully completed......................................
+2023-10-27 16:21:07,728:INFO:SubProcess create_model() end ==================================
+2023-10-27 16:21:07,728:INFO:Creating metrics dataframe
+2023-10-27 16:21:07,735:INFO:Initializing SVM - Linear Kernel
+2023-10-27 16:21:07,735:INFO:Total runtime is 0.8186534325281778 minutes
+2023-10-27 16:21:07,737:INFO:SubProcess create_model() called ==================================
+2023-10-27 16:21:07,737:INFO:Initializing create_model()
+2023-10-27 16:21:07,737:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x2871e9550>, estimator=svm, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x1063a9bb0>, model_only=True, return_train_score=False, kwargs={})
+2023-10-27 16:21:07,737:INFO:Checking exceptions
+2023-10-27 16:21:07,737:INFO:Importing libraries
+2023-10-27 16:21:07,737:INFO:Copying training dataset
+2023-10-27 16:21:07,764:INFO:Defining folds
+2023-10-27 16:21:07,764:INFO:Declaring metric variables
+2023-10-27 16:21:07,771:INFO:Importing untrained model
+2023-10-27 16:21:07,782:INFO:SVM - Linear Kernel Imported successfully
+2023-10-27 16:21:07,791:INFO:Starting cross validation
+2023-10-27 16:21:07,794:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-10-27 16:21:15,881:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/pycaret/internal/metrics.py:190: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/pycaret/internal/metrics.py", line 182, in _score
+    return super()._score(
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/utils/_available_if.py", line 32, in __get__
+    if not self.check(obj):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/linear_model/_stochastic_gradient.py", line 1235, in _check_proba
+    raise AttributeError(
+AttributeError: probability estimates are not available for loss='hinge'
+
+  warnings.warn(
+
+2023-10-27 16:21:16,117:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/pycaret/internal/metrics.py:190: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/pycaret/internal/metrics.py", line 182, in _score
+    return super()._score(
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/utils/_available_if.py", line 32, in __get__
+    if not self.check(obj):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/linear_model/_stochastic_gradient.py", line 1235, in _check_proba
+    raise AttributeError(
+AttributeError: probability estimates are not available for loss='hinge'
+
+  warnings.warn(
+
+2023-10-27 16:21:16,549:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/pycaret/internal/metrics.py:190: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/pycaret/internal/metrics.py", line 182, in _score
+    return super()._score(
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/utils/_available_if.py", line 32, in __get__
+    if not self.check(obj):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/linear_model/_stochastic_gradient.py", line 1235, in _check_proba
+    raise AttributeError(
+AttributeError: probability estimates are not available for loss='hinge'
+
+  warnings.warn(
+
+2023-10-27 16:21:17,459:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/pycaret/internal/metrics.py:190: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/pycaret/internal/metrics.py", line 182, in _score
+    return super()._score(
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/utils/_available_if.py", line 32, in __get__
+    if not self.check(obj):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/linear_model/_stochastic_gradient.py", line 1235, in _check_proba
+    raise AttributeError(
+AttributeError: probability estimates are not available for loss='hinge'
+
+  warnings.warn(
+
+2023-10-27 16:21:17,832:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/pycaret/internal/metrics.py:190: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/pycaret/internal/metrics.py", line 182, in _score
+    return super()._score(
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/utils/_available_if.py", line 32, in __get__
+    if not self.check(obj):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/linear_model/_stochastic_gradient.py", line 1235, in _check_proba
+    raise AttributeError(
+AttributeError: probability estimates are not available for loss='hinge'
+
+  warnings.warn(
+
+2023-10-27 16:21:17,867:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/pycaret/internal/metrics.py:190: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/pycaret/internal/metrics.py", line 182, in _score
+    return super()._score(
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/utils/_available_if.py", line 32, in __get__
+    if not self.check(obj):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/linear_model/_stochastic_gradient.py", line 1235, in _check_proba
+    raise AttributeError(
+AttributeError: probability estimates are not available for loss='hinge'
+
+  warnings.warn(
+
+2023-10-27 16:21:18,537:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/pycaret/internal/metrics.py:190: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/pycaret/internal/metrics.py", line 182, in _score
+    return super()._score(
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/utils/_available_if.py", line 32, in __get__
+    if not self.check(obj):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/linear_model/_stochastic_gradient.py", line 1235, in _check_proba
+    raise AttributeError(
+AttributeError: probability estimates are not available for loss='hinge'
+
+  warnings.warn(
+
+2023-10-27 16:21:19,001:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/pycaret/internal/metrics.py:190: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/pycaret/internal/metrics.py", line 182, in _score
+    return super()._score(
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/utils/_available_if.py", line 32, in __get__
+    if not self.check(obj):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/linear_model/_stochastic_gradient.py", line 1235, in _check_proba
+    raise AttributeError(
+AttributeError: probability estimates are not available for loss='hinge'
+
+  warnings.warn(
+
+2023-10-27 16:21:21,986:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/pycaret/internal/metrics.py:190: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/pycaret/internal/metrics.py", line 182, in _score
+    return super()._score(
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/utils/_available_if.py", line 32, in __get__
+    if not self.check(obj):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/linear_model/_stochastic_gradient.py", line 1235, in _check_proba
+    raise AttributeError(
+AttributeError: probability estimates are not available for loss='hinge'
+
+  warnings.warn(
+
+2023-10-27 16:21:22,258:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/pycaret/internal/metrics.py:190: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/pycaret/internal/metrics.py", line 182, in _score
+    return super()._score(
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/utils/_available_if.py", line 32, in __get__
+    if not self.check(obj):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/linear_model/_stochastic_gradient.py", line 1235, in _check_proba
+    raise AttributeError(
+AttributeError: probability estimates are not available for loss='hinge'
+
+  warnings.warn(
+
+2023-10-27 16:21:22,398:INFO:Calculating mean and std
+2023-10-27 16:21:22,399:INFO:Creating metrics dataframe
+2023-10-27 16:21:22,402:INFO:Uploading results into container
+2023-10-27 16:21:22,402:INFO:Uploading model into container now
+2023-10-27 16:21:22,403:INFO:_master_model_container: 5
+2023-10-27 16:21:22,403:INFO:_display_container: 2
+2023-10-27 16:21:22,403:INFO:SGDClassifier(alpha=0.0001, average=False, class_weight=None,
+              early_stopping=False, epsilon=0.1, eta0=0.001, fit_intercept=True,
+              l1_ratio=0.15, learning_rate='optimal', loss='hinge',
+              max_iter=1000, n_iter_no_change=5, n_jobs=-1, penalty='l2',
+              power_t=0.5, random_state=123, shuffle=True, tol=0.001,
+              validation_fraction=0.1, verbose=0, warm_start=False)
+2023-10-27 16:21:22,404:INFO:create_model() successfully completed......................................
+2023-10-27 16:21:22,458:INFO:SubProcess create_model() end ==================================
+2023-10-27 16:21:22,458:INFO:Creating metrics dataframe
+2023-10-27 16:21:22,465:INFO:Initializing Ridge Classifier
+2023-10-27 16:21:22,465:INFO:Total runtime is 1.0641507347424823 minutes
+2023-10-27 16:21:22,467:INFO:SubProcess create_model() called ==================================
+2023-10-27 16:21:22,467:INFO:Initializing create_model()
+2023-10-27 16:21:22,467:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x2871e9550>, estimator=ridge, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x1063a9bb0>, model_only=True, return_train_score=False, kwargs={})
+2023-10-27 16:21:22,467:INFO:Checking exceptions
+2023-10-27 16:21:22,467:INFO:Importing libraries
+2023-10-27 16:21:22,467:INFO:Copying training dataset
+2023-10-27 16:21:22,489:INFO:Defining folds
+2023-10-27 16:21:22,489:INFO:Declaring metric variables
+2023-10-27 16:21:22,491:INFO:Importing untrained model
+2023-10-27 16:21:22,493:INFO:Ridge Classifier Imported successfully
+2023-10-27 16:21:22,497:INFO:Starting cross validation
+2023-10-27 16:21:22,498:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-10-27 16:21:22,630:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/linear_model/_ridge.py:216: LinAlgWarning: Ill-conditioned matrix (rcond=1.84901e-08): result may not be accurate.
+  return linalg.solve(A, Xy, assume_a="pos", overwrite_a=True).T
+
+2023-10-27 16:21:22,643:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/pycaret/internal/metrics.py:190: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/pycaret/internal/metrics.py", line 182, in _score
+    return super()._score(
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+AttributeError: 'RidgeClassifier' object has no attribute 'predict_proba'
+
+  warnings.warn(
+
+2023-10-27 16:21:22,644:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/pycaret/internal/metrics.py:190: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/pycaret/internal/metrics.py", line 182, in _score
+    return super()._score(
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+AttributeError: 'RidgeClassifier' object has no attribute 'predict_proba'
+
+  warnings.warn(
+
+2023-10-27 16:21:22,667:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/linear_model/_ridge.py:216: LinAlgWarning: Ill-conditioned matrix (rcond=2.64723e-08): result may not be accurate.
+  return linalg.solve(A, Xy, assume_a="pos", overwrite_a=True).T
+
+2023-10-27 16:21:22,668:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/linear_model/_ridge.py:216: LinAlgWarning: Ill-conditioned matrix (rcond=2.11683e-08): result may not be accurate.
+  return linalg.solve(A, Xy, assume_a="pos", overwrite_a=True).T
+
+2023-10-27 16:21:22,674:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/pycaret/internal/metrics.py:190: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/pycaret/internal/metrics.py", line 182, in _score
+    return super()._score(
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+AttributeError: 'RidgeClassifier' object has no attribute 'predict_proba'
+
+  warnings.warn(
+
+2023-10-27 16:21:22,675:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/pycaret/internal/metrics.py:190: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/pycaret/internal/metrics.py", line 182, in _score
+    return super()._score(
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+AttributeError: 'RidgeClassifier' object has no attribute 'predict_proba'
+
+  warnings.warn(
+
+2023-10-27 16:21:22,700:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/linear_model/_ridge.py:216: LinAlgWarning: Ill-conditioned matrix (rcond=1.85446e-08): result may not be accurate.
+  return linalg.solve(A, Xy, assume_a="pos", overwrite_a=True).T
+
+2023-10-27 16:21:22,713:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/linear_model/_ridge.py:216: LinAlgWarning: Ill-conditioned matrix (rcond=2.1104e-08): result may not be accurate.
+  return linalg.solve(A, Xy, assume_a="pos", overwrite_a=True).T
+
+2023-10-27 16:21:22,713:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/pycaret/internal/metrics.py:190: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/pycaret/internal/metrics.py", line 182, in _score
+    return super()._score(
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+AttributeError: 'RidgeClassifier' object has no attribute 'predict_proba'
+
+  warnings.warn(
+
+2023-10-27 16:21:22,724:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/pycaret/internal/metrics.py:190: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/pycaret/internal/metrics.py", line 182, in _score
+    return super()._score(
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+AttributeError: 'RidgeClassifier' object has no attribute 'predict_proba'
+
+  warnings.warn(
+
+2023-10-27 16:21:22,735:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/linear_model/_ridge.py:216: LinAlgWarning: Ill-conditioned matrix (rcond=1.58856e-08): result may not be accurate.
+  return linalg.solve(A, Xy, assume_a="pos", overwrite_a=True).T
+
+2023-10-27 16:21:22,743:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/pycaret/internal/metrics.py:190: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/pycaret/internal/metrics.py", line 182, in _score
+    return super()._score(
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+AttributeError: 'RidgeClassifier' object has no attribute 'predict_proba'
+
+  warnings.warn(
+
+2023-10-27 16:21:22,773:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/linear_model/_ridge.py:216: LinAlgWarning: Ill-conditioned matrix (rcond=2.11479e-08): result may not be accurate.
+  return linalg.solve(A, Xy, assume_a="pos", overwrite_a=True).T
+
+2023-10-27 16:21:22,780:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/pycaret/internal/metrics.py:190: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/pycaret/internal/metrics.py", line 182, in _score
+    return super()._score(
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+AttributeError: 'RidgeClassifier' object has no attribute 'predict_proba'
+
+  warnings.warn(
+
+2023-10-27 16:21:22,800:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/linear_model/_ridge.py:216: LinAlgWarning: Ill-conditioned matrix (rcond=2.11332e-08): result may not be accurate.
+  return linalg.solve(A, Xy, assume_a="pos", overwrite_a=True).T
+
+2023-10-27 16:21:22,808:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/pycaret/internal/metrics.py:190: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/pycaret/internal/metrics.py", line 182, in _score
+    return super()._score(
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+AttributeError: 'RidgeClassifier' object has no attribute 'predict_proba'
+
+  warnings.warn(
+
+2023-10-27 16:21:22,809:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/linear_model/_ridge.py:216: LinAlgWarning: Ill-conditioned matrix (rcond=2.11425e-08): result may not be accurate.
+  return linalg.solve(A, Xy, assume_a="pos", overwrite_a=True).T
+
+2023-10-27 16:21:22,816:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/pycaret/internal/metrics.py:190: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/pycaret/internal/metrics.py", line 182, in _score
+    return super()._score(
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+AttributeError: 'RidgeClassifier' object has no attribute 'predict_proba'
+
+  warnings.warn(
+
+2023-10-27 16:21:22,955:INFO:Calculating mean and std
+2023-10-27 16:21:22,956:INFO:Creating metrics dataframe
+2023-10-27 16:21:22,959:INFO:Uploading results into container
+2023-10-27 16:21:22,959:INFO:Uploading model into container now
+2023-10-27 16:21:22,960:INFO:_master_model_container: 6
+2023-10-27 16:21:22,960:INFO:_display_container: 2
+2023-10-27 16:21:22,960:INFO:RidgeClassifier(alpha=1.0, class_weight=None, copy_X=True, fit_intercept=True,
+                max_iter=None, positive=False, random_state=123, solver='auto',
+                tol=0.0001)
+2023-10-27 16:21:22,960:INFO:create_model() successfully completed......................................
+2023-10-27 16:21:23,014:INFO:SubProcess create_model() end ==================================
+2023-10-27 16:21:23,014:INFO:Creating metrics dataframe
+2023-10-27 16:21:23,021:INFO:Initializing Random Forest Classifier
+2023-10-27 16:21:23,021:INFO:Total runtime is 1.0734255353609718 minutes
+2023-10-27 16:21:23,023:INFO:SubProcess create_model() called ==================================
+2023-10-27 16:21:23,024:INFO:Initializing create_model()
+2023-10-27 16:21:23,024:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x2871e9550>, estimator=rf, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x1063a9bb0>, model_only=True, return_train_score=False, kwargs={})
+2023-10-27 16:21:23,024:INFO:Checking exceptions
+2023-10-27 16:21:23,024:INFO:Importing libraries
+2023-10-27 16:21:23,024:INFO:Copying training dataset
+2023-10-27 16:21:23,047:INFO:Defining folds
+2023-10-27 16:21:23,047:INFO:Declaring metric variables
+2023-10-27 16:21:23,049:INFO:Importing untrained model
+2023-10-27 16:21:23,051:INFO:Random Forest Classifier Imported successfully
+2023-10-27 16:21:23,057:INFO:Starting cross validation
+2023-10-27 16:21:23,057:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-10-27 16:22:06,345:INFO:Calculating mean and std
+2023-10-27 16:22:06,348:INFO:Creating metrics dataframe
+2023-10-27 16:22:06,354:INFO:Uploading results into container
+2023-10-27 16:22:06,354:INFO:Uploading model into container now
+2023-10-27 16:22:06,355:INFO:_master_model_container: 7
+2023-10-27 16:22:06,355:INFO:_display_container: 2
+2023-10-27 16:22:06,356:INFO:RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=None, max_features='sqrt',
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_samples_leaf=1,
+                       min_samples_split=2, min_weight_fraction_leaf=0.0,
+                       n_estimators=100, n_jobs=-1, oob_score=False,
+                       random_state=123, verbose=0, warm_start=False)
+2023-10-27 16:22:06,356:INFO:create_model() successfully completed......................................
+2023-10-27 16:22:06,458:INFO:SubProcess create_model() end ==================================
+2023-10-27 16:22:06,458:INFO:Creating metrics dataframe
+2023-10-27 16:22:06,465:INFO:Initializing Quadratic Discriminant Analysis
+2023-10-27 16:22:06,465:INFO:Total runtime is 1.7974934975306192 minutes
+2023-10-27 16:22:06,467:INFO:SubProcess create_model() called ==================================
+2023-10-27 16:22:06,468:INFO:Initializing create_model()
+2023-10-27 16:22:06,468:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x2871e9550>, estimator=qda, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x1063a9bb0>, model_only=True, return_train_score=False, kwargs={})
+2023-10-27 16:22:06,468:INFO:Checking exceptions
+2023-10-27 16:22:06,468:INFO:Importing libraries
+2023-10-27 16:22:06,468:INFO:Copying training dataset
+2023-10-27 16:22:06,500:INFO:Defining folds
+2023-10-27 16:22:06,501:INFO:Declaring metric variables
+2023-10-27 16:22:06,504:INFO:Importing untrained model
+2023-10-27 16:22:06,506:INFO:Quadratic Discriminant Analysis Imported successfully
+2023-10-27 16:22:06,510:INFO:Starting cross validation
+2023-10-27 16:22:06,511:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-10-27 16:22:06,673:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/discriminant_analysis.py:926: UserWarning: Variables are collinear
+  warnings.warn("Variables are collinear")
+
+2023-10-27 16:22:06,688:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/discriminant_analysis.py:926: UserWarning: Variables are collinear
+  warnings.warn("Variables are collinear")
+
+2023-10-27 16:22:06,732:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/discriminant_analysis.py:926: UserWarning: Variables are collinear
+  warnings.warn("Variables are collinear")
+
+2023-10-27 16:22:06,764:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/discriminant_analysis.py:926: UserWarning: Variables are collinear
+  warnings.warn("Variables are collinear")
+
+2023-10-27 16:22:06,767:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1344: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+2023-10-27 16:22:06,781:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1344: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+2023-10-27 16:22:06,813:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1344: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+2023-10-27 16:22:06,819:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/discriminant_analysis.py:926: UserWarning: Variables are collinear
+  warnings.warn("Variables are collinear")
+
+2023-10-27 16:22:06,838:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1344: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+2023-10-27 16:22:06,883:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/discriminant_analysis.py:926: UserWarning: Variables are collinear
+  warnings.warn("Variables are collinear")
+
+2023-10-27 16:22:06,915:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1344: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+2023-10-27 16:22:06,935:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/discriminant_analysis.py:926: UserWarning: Variables are collinear
+  warnings.warn("Variables are collinear")
+
+2023-10-27 16:22:06,997:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1344: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+2023-10-27 16:22:07,059:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/discriminant_analysis.py:926: UserWarning: Variables are collinear
+  warnings.warn("Variables are collinear")
+
+2023-10-27 16:22:07,069:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/discriminant_analysis.py:926: UserWarning: Variables are collinear
+  warnings.warn("Variables are collinear")
+
+2023-10-27 16:22:07,072:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1344: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+2023-10-27 16:22:07,074:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/discriminant_analysis.py:926: UserWarning: Variables are collinear
+  warnings.warn("Variables are collinear")
+
+2023-10-27 16:22:07,166:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1344: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+2023-10-27 16:22:07,180:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1344: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+2023-10-27 16:22:07,185:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1344: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+2023-10-27 16:22:07,321:INFO:Calculating mean and std
+2023-10-27 16:22:07,322:INFO:Creating metrics dataframe
+2023-10-27 16:22:07,325:INFO:Uploading results into container
+2023-10-27 16:22:07,325:INFO:Uploading model into container now
+2023-10-27 16:22:07,326:INFO:_master_model_container: 8
+2023-10-27 16:22:07,326:INFO:_display_container: 2
+2023-10-27 16:22:07,326:INFO:QuadraticDiscriminantAnalysis(priors=None, reg_param=0.0,
+                              store_covariance=False, tol=0.0001)
+2023-10-27 16:22:07,326:INFO:create_model() successfully completed......................................
+2023-10-27 16:22:07,383:INFO:SubProcess create_model() end ==================================
+2023-10-27 16:22:07,383:INFO:Creating metrics dataframe
+2023-10-27 16:22:07,390:INFO:Initializing Ada Boost Classifier
+2023-10-27 16:22:07,390:INFO:Total runtime is 1.812909682591756 minutes
+2023-10-27 16:22:07,392:INFO:SubProcess create_model() called ==================================
+2023-10-27 16:22:07,393:INFO:Initializing create_model()
+2023-10-27 16:22:07,393:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x2871e9550>, estimator=ada, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x1063a9bb0>, model_only=True, return_train_score=False, kwargs={})
+2023-10-27 16:22:07,393:INFO:Checking exceptions
+2023-10-27 16:22:07,393:INFO:Importing libraries
+2023-10-27 16:22:07,393:INFO:Copying training dataset
+2023-10-27 16:22:07,417:INFO:Defining folds
+2023-10-27 16:22:07,417:INFO:Declaring metric variables
+2023-10-27 16:22:07,419:INFO:Importing untrained model
+2023-10-27 16:22:07,422:INFO:Ada Boost Classifier Imported successfully
+2023-10-27 16:22:07,427:INFO:Starting cross validation
+2023-10-27 16:22:07,428:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-10-27 16:22:19,351:INFO:Calculating mean and std
+2023-10-27 16:22:19,353:INFO:Creating metrics dataframe
+2023-10-27 16:22:19,356:INFO:Uploading results into container
+2023-10-27 16:22:19,356:INFO:Uploading model into container now
+2023-10-27 16:22:19,357:INFO:_master_model_container: 9
+2023-10-27 16:22:19,357:INFO:_display_container: 2
+2023-10-27 16:22:19,357:INFO:AdaBoostClassifier(algorithm='SAMME.R', base_estimator='deprecated',
+                   estimator=None, learning_rate=1.0, n_estimators=50,
+                   random_state=123)
+2023-10-27 16:22:19,358:INFO:create_model() successfully completed......................................
+2023-10-27 16:22:19,416:INFO:SubProcess create_model() end ==================================
+2023-10-27 16:22:19,416:INFO:Creating metrics dataframe
+2023-10-27 16:22:19,423:INFO:Initializing Gradient Boosting Classifier
+2023-10-27 16:22:19,423:INFO:Total runtime is 2.0134559353192647 minutes
+2023-10-27 16:22:19,426:INFO:SubProcess create_model() called ==================================
+2023-10-27 16:22:19,426:INFO:Initializing create_model()
+2023-10-27 16:22:19,426:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x2871e9550>, estimator=gbc, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x1063a9bb0>, model_only=True, return_train_score=False, kwargs={})
+2023-10-27 16:22:19,426:INFO:Checking exceptions
+2023-10-27 16:22:19,426:INFO:Importing libraries
+2023-10-27 16:22:19,427:INFO:Copying training dataset
+2023-10-27 16:22:19,450:INFO:Defining folds
+2023-10-27 16:22:19,450:INFO:Declaring metric variables
+2023-10-27 16:22:19,452:INFO:Importing untrained model
+2023-10-27 16:22:19,455:INFO:Gradient Boosting Classifier Imported successfully
+2023-10-27 16:22:19,460:INFO:Starting cross validation
+2023-10-27 16:22:19,461:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-10-27 16:23:11,288:INFO:Calculating mean and std
+2023-10-27 16:23:11,289:INFO:Creating metrics dataframe
+2023-10-27 16:23:11,295:INFO:Uploading results into container
+2023-10-27 16:23:11,295:INFO:Uploading model into container now
+2023-10-27 16:23:11,296:INFO:_master_model_container: 10
+2023-10-27 16:23:11,296:INFO:_display_container: 2
+2023-10-27 16:23:11,297:INFO:GradientBoostingClassifier(ccp_alpha=0.0, criterion='friedman_mse', init=None,
+                           learning_rate=0.1, loss='log_loss', max_depth=3,
+                           max_features=None, max_leaf_nodes=None,
+                           min_impurity_decrease=0.0, min_samples_leaf=1,
+                           min_samples_split=2, min_weight_fraction_leaf=0.0,
+                           n_estimators=100, n_iter_no_change=None,
+                           random_state=123, subsample=1.0, tol=0.0001,
+                           validation_fraction=0.1, verbose=0,
+                           warm_start=False)
+2023-10-27 16:23:11,297:INFO:create_model() successfully completed......................................
+2023-10-27 16:23:11,361:INFO:SubProcess create_model() end ==================================
+2023-10-27 16:23:11,362:INFO:Creating metrics dataframe
+2023-10-27 16:23:11,369:INFO:Initializing Linear Discriminant Analysis
+2023-10-27 16:23:11,369:INFO:Total runtime is 2.8792205174763996 minutes
+2023-10-27 16:23:11,371:INFO:SubProcess create_model() called ==================================
+2023-10-27 16:23:11,371:INFO:Initializing create_model()
+2023-10-27 16:23:11,372:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x2871e9550>, estimator=lda, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x1063a9bb0>, model_only=True, return_train_score=False, kwargs={})
+2023-10-27 16:23:11,372:INFO:Checking exceptions
+2023-10-27 16:23:11,372:INFO:Importing libraries
+2023-10-27 16:23:11,372:INFO:Copying training dataset
+2023-10-27 16:23:11,396:INFO:Defining folds
+2023-10-27 16:23:11,396:INFO:Declaring metric variables
+2023-10-27 16:23:11,399:INFO:Importing untrained model
+2023-10-27 16:23:11,401:INFO:Linear Discriminant Analysis Imported successfully
+2023-10-27 16:23:11,405:INFO:Starting cross validation
+2023-10-27 16:23:11,406:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-10-27 16:23:12,259:INFO:Calculating mean and std
+2023-10-27 16:23:12,260:INFO:Creating metrics dataframe
+2023-10-27 16:23:12,263:INFO:Uploading results into container
+2023-10-27 16:23:12,263:INFO:Uploading model into container now
+2023-10-27 16:23:12,263:INFO:_master_model_container: 11
+2023-10-27 16:23:12,264:INFO:_display_container: 2
+2023-10-27 16:23:12,264:INFO:LinearDiscriminantAnalysis(covariance_estimator=None, n_components=None,
+                           priors=None, shrinkage=None, solver='svd',
+                           store_covariance=False, tol=0.0001)
+2023-10-27 16:23:12,264:INFO:create_model() successfully completed......................................
+2023-10-27 16:23:12,319:INFO:SubProcess create_model() end ==================================
+2023-10-27 16:23:12,319:INFO:Creating metrics dataframe
+2023-10-27 16:23:12,327:INFO:Initializing Extra Trees Classifier
+2023-10-27 16:23:12,327:INFO:Total runtime is 2.895185613632202 minutes
+2023-10-27 16:23:12,329:INFO:SubProcess create_model() called ==================================
+2023-10-27 16:23:12,329:INFO:Initializing create_model()
+2023-10-27 16:23:12,329:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x2871e9550>, estimator=et, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x1063a9bb0>, model_only=True, return_train_score=False, kwargs={})
+2023-10-27 16:23:12,330:INFO:Checking exceptions
+2023-10-27 16:23:12,330:INFO:Importing libraries
+2023-10-27 16:23:12,330:INFO:Copying training dataset
+2023-10-27 16:23:12,351:INFO:Defining folds
+2023-10-27 16:23:12,352:INFO:Declaring metric variables
+2023-10-27 16:23:12,354:INFO:Importing untrained model
+2023-10-27 16:23:12,357:INFO:Extra Trees Classifier Imported successfully
+2023-10-27 16:23:12,361:INFO:Starting cross validation
+2023-10-27 16:23:12,361:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-10-27 16:23:39,477:INFO:Calculating mean and std
+2023-10-27 16:23:39,480:INFO:Creating metrics dataframe
+2023-10-27 16:23:39,486:INFO:Uploading results into container
+2023-10-27 16:23:39,487:INFO:Uploading model into container now
+2023-10-27 16:23:39,487:INFO:_master_model_container: 12
+2023-10-27 16:23:39,488:INFO:_display_container: 2
+2023-10-27 16:23:39,489:INFO:ExtraTreesClassifier(bootstrap=False, ccp_alpha=0.0, class_weight=None,
+                     criterion='gini', max_depth=None, max_features='sqrt',
+                     max_leaf_nodes=None, max_samples=None,
+                     min_impurity_decrease=0.0, min_samples_leaf=1,
+                     min_samples_split=2, min_weight_fraction_leaf=0.0,
+                     n_estimators=100, n_jobs=-1, oob_score=False,
+                     random_state=123, verbose=0, warm_start=False)
+2023-10-27 16:23:39,489:INFO:create_model() successfully completed......................................
+2023-10-27 16:23:39,595:INFO:SubProcess create_model() end ==================================
+2023-10-27 16:23:39,595:INFO:Creating metrics dataframe
+2023-10-27 16:23:39,604:INFO:Initializing Light Gradient Boosting Machine
+2023-10-27 16:23:39,604:INFO:Total runtime is 3.349801750977834 minutes
+2023-10-27 16:23:39,606:INFO:SubProcess create_model() called ==================================
+2023-10-27 16:23:39,607:INFO:Initializing create_model()
+2023-10-27 16:23:39,607:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x2871e9550>, estimator=lightgbm, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x1063a9bb0>, model_only=True, return_train_score=False, kwargs={})
+2023-10-27 16:23:39,607:INFO:Checking exceptions
+2023-10-27 16:23:39,607:INFO:Importing libraries
+2023-10-27 16:23:39,607:INFO:Copying training dataset
+2023-10-27 16:23:39,638:INFO:Defining folds
+2023-10-27 16:23:39,639:INFO:Declaring metric variables
+2023-10-27 16:23:39,641:INFO:Importing untrained model
+2023-10-27 16:23:39,644:INFO:Light Gradient Boosting Machine Imported successfully
+2023-10-27 16:23:39,647:INFO:Starting cross validation
+2023-10-27 16:23:39,648:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-10-27 16:23:44,840:INFO:[LightGBM] [Info] Number of positive: 17735, number of negative: 68357
+2023-10-27 16:23:44,850:INFO:[LightGBM] [Info] Auto-choosing row-wise multi-threading, the overhead of testing was 0.004120 seconds.
+2023-10-27 16:23:44,850:INFO:You can set `force_row_wise=true` to remove the overhead.
+2023-10-27 16:23:44,850:INFO:And if memory is not enough, you can set `force_col_wise=true`.
+2023-10-27 16:23:44,850:INFO:[LightGBM] [Info] Total Bins 1766
+2023-10-27 16:23:44,850:INFO:[LightGBM] [Info] Number of data points in the train set: 86092, number of used features: 18
+2023-10-27 16:23:44,851:INFO:[LightGBM] [Info] [binary:BoostFromScore]: pavg=0.206001 -> initscore=-1.349204
+2023-10-27 16:23:44,851:INFO:[LightGBM] [Info] Start training from score -1.349204
+2023-10-27 16:23:46,917:INFO:Calculating mean and std
+2023-10-27 16:23:46,919:INFO:Creating metrics dataframe
+2023-10-27 16:23:46,923:INFO:Uploading results into container
+2023-10-27 16:23:46,923:INFO:Uploading model into container now
+2023-10-27 16:23:46,924:INFO:_master_model_container: 13
+2023-10-27 16:23:46,924:INFO:_display_container: 2
+2023-10-27 16:23:46,924:INFO:LGBMClassifier(boosting_type='gbdt', class_weight=None, colsample_bytree=1.0,
+               importance_type='split', learning_rate=0.1, max_depth=-1,
+               min_child_samples=20, min_child_weight=0.001, min_split_gain=0.0,
+               n_estimators=100, n_jobs=-1, num_leaves=31, objective=None,
+               random_state=123, reg_alpha=0.0, reg_lambda=0.0, subsample=1.0,
+               subsample_for_bin=200000, subsample_freq=0)
+2023-10-27 16:23:46,924:INFO:create_model() successfully completed......................................
+2023-10-27 16:23:46,986:INFO:SubProcess create_model() end ==================================
+2023-10-27 16:23:46,986:INFO:Creating metrics dataframe
+2023-10-27 16:23:46,995:INFO:Initializing Dummy Classifier
+2023-10-27 16:23:46,995:INFO:Total runtime is 3.4729830503463743 minutes
+2023-10-27 16:23:46,997:INFO:SubProcess create_model() called ==================================
+2023-10-27 16:23:46,997:INFO:Initializing create_model()
+2023-10-27 16:23:46,997:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x2871e9550>, estimator=dummy, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x1063a9bb0>, model_only=True, return_train_score=False, kwargs={})
+2023-10-27 16:23:46,997:INFO:Checking exceptions
+2023-10-27 16:23:46,997:INFO:Importing libraries
+2023-10-27 16:23:46,997:INFO:Copying training dataset
+2023-10-27 16:23:47,021:INFO:Defining folds
+2023-10-27 16:23:47,021:INFO:Declaring metric variables
+2023-10-27 16:23:47,024:INFO:Importing untrained model
+2023-10-27 16:23:47,027:INFO:Dummy Classifier Imported successfully
+2023-10-27 16:23:47,031:INFO:Starting cross validation
+2023-10-27 16:23:47,031:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-10-27 16:23:47,137:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1344: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+2023-10-27 16:23:47,152:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1344: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+2023-10-27 16:23:47,169:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1344: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+2023-10-27 16:23:47,189:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1344: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+2023-10-27 16:23:47,236:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1344: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+2023-10-27 16:23:47,240:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1344: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+2023-10-27 16:23:47,269:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1344: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+2023-10-27 16:23:47,272:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1344: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+2023-10-27 16:23:47,305:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1344: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+2023-10-27 16:23:47,323:WARNING:/Users/deebakkarthi/.local/share/conda/envs/pycaret/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1344: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+2023-10-27 16:23:47,446:INFO:Calculating mean and std
+2023-10-27 16:23:47,447:INFO:Creating metrics dataframe
+2023-10-27 16:23:47,450:INFO:Uploading results into container
+2023-10-27 16:23:47,450:INFO:Uploading model into container now
+2023-10-27 16:23:47,451:INFO:_master_model_container: 14
+2023-10-27 16:23:47,451:INFO:_display_container: 2
+2023-10-27 16:23:47,451:INFO:DummyClassifier(constant=None, random_state=123, strategy='prior')
+2023-10-27 16:23:47,451:INFO:create_model() successfully completed......................................
+2023-10-27 16:23:47,506:INFO:SubProcess create_model() end ==================================
+2023-10-27 16:23:47,506:INFO:Creating metrics dataframe
+2023-10-27 16:23:47,519:INFO:Initializing create_model()
+2023-10-27 16:23:47,519:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x2871e9550>, estimator=LGBMClassifier(boosting_type='gbdt', class_weight=None, colsample_bytree=1.0,
+               importance_type='split', learning_rate=0.1, max_depth=-1,
+               min_child_samples=20, min_child_weight=0.001, min_split_gain=0.0,
+               n_estimators=100, n_jobs=-1, num_leaves=31, objective=None,
+               random_state=123, reg_alpha=0.0, reg_lambda=0.0, subsample=1.0,
+               subsample_for_bin=200000, subsample_freq=0), fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=False, predict=False, fit_kwargs={}, groups=None, refit=True, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=None, model_only=True, return_train_score=False, kwargs={})
+2023-10-27 16:23:47,520:INFO:Checking exceptions
+2023-10-27 16:23:47,521:INFO:Importing libraries
+2023-10-27 16:23:47,521:INFO:Copying training dataset
+2023-10-27 16:23:47,544:INFO:Defining folds
+2023-10-27 16:23:47,544:INFO:Declaring metric variables
+2023-10-27 16:23:47,545:INFO:Importing untrained model
+2023-10-27 16:23:47,545:INFO:Declaring custom model
+2023-10-27 16:23:47,545:INFO:Light Gradient Boosting Machine Imported successfully
+2023-10-27 16:23:47,546:INFO:Cross validation set to False
+2023-10-27 16:23:47,546:INFO:Fitting Model
+2023-10-27 16:23:47,654:INFO:[LightGBM] [Info] Number of positive: 19705, number of negative: 75952
+2023-10-27 16:23:47,660:INFO:[LightGBM] [Info] Auto-choosing row-wise multi-threading, the overhead of testing was 0.002390 seconds.
+2023-10-27 16:23:47,660:INFO:You can set `force_row_wise=true` to remove the overhead.
+2023-10-27 16:23:47,660:INFO:And if memory is not enough, you can set `force_col_wise=true`.
+2023-10-27 16:23:47,660:INFO:[LightGBM] [Info] Total Bins 1769
+2023-10-27 16:23:47,660:INFO:[LightGBM] [Info] Number of data points in the train set: 95657, number of used features: 18
+2023-10-27 16:23:47,661:INFO:[LightGBM] [Info] [binary:BoostFromScore]: pavg=0.205996 -> initscore=-1.349229
+2023-10-27 16:23:47,661:INFO:[LightGBM] [Info] Start training from score -1.349229
+2023-10-27 16:23:48,369:INFO:LGBMClassifier(boosting_type='gbdt', class_weight=None, colsample_bytree=1.0,
+               importance_type='split', learning_rate=0.1, max_depth=-1,
+               min_child_samples=20, min_child_weight=0.001, min_split_gain=0.0,
+               n_estimators=100, n_jobs=-1, num_leaves=31, objective=None,
+               random_state=123, reg_alpha=0.0, reg_lambda=0.0, subsample=1.0,
+               subsample_for_bin=200000, subsample_freq=0)
+2023-10-27 16:23:48,370:INFO:create_model() successfully completed......................................
+2023-10-27 16:23:48,442:INFO:_master_model_container: 14
+2023-10-27 16:23:48,442:INFO:_display_container: 2
+2023-10-27 16:23:48,443:INFO:LGBMClassifier(boosting_type='gbdt', class_weight=None, colsample_bytree=1.0,
+               importance_type='split', learning_rate=0.1, max_depth=-1,
+               min_child_samples=20, min_child_weight=0.001, min_split_gain=0.0,
+               n_estimators=100, n_jobs=-1, num_leaves=31, objective=None,
+               random_state=123, reg_alpha=0.0, reg_lambda=0.0, subsample=1.0,
+               subsample_for_bin=200000, subsample_freq=0)
+2023-10-27 16:23:48,443:INFO:compare_models() successfully completed......................................
+2023-10-27 16:24:14,326:INFO:Initializing plot_model()
+2023-10-27 16:24:14,326:INFO:plot_model(plot=confusion_matrix, fold=None, verbose=True, display=None, display_format=None, estimator=LGBMClassifier(boosting_type='gbdt', class_weight=None, colsample_bytree=1.0,
+               importance_type='split', learning_rate=0.1, max_depth=-1,
+               min_child_samples=20, min_child_weight=0.001, min_split_gain=0.0,
+               n_estimators=100, n_jobs=-1, num_leaves=31, objective=None,
+               random_state=123, reg_alpha=0.0, reg_lambda=0.0, subsample=1.0,
+               subsample_for_bin=200000, subsample_freq=0), feature_name=None, fit_kwargs=None, groups=None, label=False, plot_kwargs=None, save=False, scale=1, self=<pycaret.classification.oop.ClassificationExperiment object at 0x2871e9550>, system=True)
+2023-10-27 16:24:14,326:INFO:Checking exceptions
+2023-10-27 16:24:14,341:INFO:Preloading libraries
+2023-10-27 16:24:14,347:INFO:Copying training dataset
+2023-10-27 16:24:14,347:INFO:Plot type: confusion_matrix
+2023-10-27 16:24:14,489:INFO:Fitting Model
+2023-10-27 16:24:14,492:INFO:Scoring test/hold-out set
+2023-10-27 16:24:14,815:INFO:Visual Rendered Successfully
+2023-10-27 16:24:14,914:INFO:plot_model() successfully completed......................................
+2023-10-27 16:24:26,585:INFO:Initializing plot_model()
+2023-10-27 16:24:26,586:INFO:plot_model(plot=auc, fold=None, verbose=True, display=None, display_format=None, estimator=LGBMClassifier(boosting_type='gbdt', class_weight=None, colsample_bytree=1.0,
+               importance_type='split', learning_rate=0.1, max_depth=-1,
+               min_child_samples=20, min_child_weight=0.001, min_split_gain=0.0,
+               n_estimators=100, n_jobs=-1, num_leaves=31, objective=None,
+               random_state=123, reg_alpha=0.0, reg_lambda=0.0, subsample=1.0,
+               subsample_for_bin=200000, subsample_freq=0), feature_name=None, fit_kwargs=None, groups=None, label=False, plot_kwargs=None, save=False, scale=1, self=<pycaret.classification.oop.ClassificationExperiment object at 0x2871e9550>, system=True)
+2023-10-27 16:24:26,586:INFO:Checking exceptions
+2023-10-27 16:24:26,599:INFO:Preloading libraries
+2023-10-27 16:24:26,605:INFO:Copying training dataset
+2023-10-27 16:24:26,605:INFO:Plot type: auc
+2023-10-27 16:24:26,740:INFO:Fitting Model
+2023-10-27 16:24:26,746:INFO:Scoring test/hold-out set
+2023-10-27 16:24:27,092:INFO:Visual Rendered Successfully
+2023-10-27 16:24:27,150:INFO:plot_model() successfully completed......................................
+2023-10-27 16:24:33,240:INFO:Initializing evaluate_model()
+2023-10-27 16:24:33,240:INFO:evaluate_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x2871e9550>, estimator=LGBMClassifier(boosting_type='gbdt', class_weight=None, colsample_bytree=1.0,
+               importance_type='split', learning_rate=0.1, max_depth=-1,
+               min_child_samples=20, min_child_weight=0.001, min_split_gain=0.0,
+               n_estimators=100, n_jobs=-1, num_leaves=31, objective=None,
+               random_state=123, reg_alpha=0.0, reg_lambda=0.0, subsample=1.0,
+               subsample_for_bin=200000, subsample_freq=0), fold=None, fit_kwargs=None, plot_kwargs=None, feature_name=None, groups=None)
+2023-10-27 16:24:33,282:INFO:Initializing plot_model()
+2023-10-27 16:24:33,282:INFO:plot_model(plot=pipeline, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), verbose=False, display=None, display_format=None, estimator=LGBMClassifier(boosting_type='gbdt', class_weight=None, colsample_bytree=1.0,
+               importance_type='split', learning_rate=0.1, max_depth=-1,
+               min_child_samples=20, min_child_weight=0.001, min_split_gain=0.0,
+               n_estimators=100, n_jobs=-1, num_leaves=31, objective=None,
+               random_state=123, reg_alpha=0.0, reg_lambda=0.0, subsample=1.0,
+               subsample_for_bin=200000, subsample_freq=0), feature_name=None, fit_kwargs={}, groups=None, label=False, plot_kwargs=None, save=False, scale=1, self=<pycaret.classification.oop.ClassificationExperiment object at 0x2871e9550>, system=True)
+2023-10-27 16:24:33,282:INFO:Checking exceptions
+2023-10-27 16:24:33,301:INFO:Preloading libraries
+2023-10-27 16:24:33,309:INFO:Copying training dataset
+2023-10-27 16:24:33,309:INFO:Plot type: pipeline
+2023-10-27 16:24:33,447:INFO:Visual Rendered Successfully
+2023-10-27 16:24:33,517:INFO:plot_model() successfully completed......................................
+2023-10-27 16:24:48,368:INFO:Initializing plot_model()
+2023-10-27 16:24:48,368:INFO:plot_model(plot=confusion_matrix, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), verbose=False, display=None, display_format=None, estimator=LGBMClassifier(boosting_type='gbdt', class_weight=None, colsample_bytree=1.0,
+               importance_type='split', learning_rate=0.1, max_depth=-1,
+               min_child_samples=20, min_child_weight=0.001, min_split_gain=0.0,
+               n_estimators=100, n_jobs=-1, num_leaves=31, objective=None,
+               random_state=123, reg_alpha=0.0, reg_lambda=0.0, subsample=1.0,
+               subsample_for_bin=200000, subsample_freq=0), feature_name=None, fit_kwargs={}, groups=None, label=False, plot_kwargs=None, save=False, scale=1, self=<pycaret.classification.oop.ClassificationExperiment object at 0x2871e9550>, system=True)
+2023-10-27 16:24:48,368:INFO:Checking exceptions
+2023-10-27 16:24:48,382:INFO:Preloading libraries
+2023-10-27 16:24:48,388:INFO:Copying training dataset
+2023-10-27 16:24:48,389:INFO:Plot type: confusion_matrix
+2023-10-27 16:24:48,519:INFO:Fitting Model
+2023-10-27 16:24:48,522:INFO:Scoring test/hold-out set
+2023-10-27 16:24:48,773:INFO:Visual Rendered Successfully
+2023-10-27 16:24:48,833:INFO:plot_model() successfully completed......................................
+2023-10-27 16:24:50,130:INFO:Initializing plot_model()
+2023-10-27 16:24:50,130:INFO:plot_model(plot=error, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), verbose=False, display=None, display_format=None, estimator=LGBMClassifier(boosting_type='gbdt', class_weight=None, colsample_bytree=1.0,
+               importance_type='split', learning_rate=0.1, max_depth=-1,
+               min_child_samples=20, min_child_weight=0.001, min_split_gain=0.0,
+               n_estimators=100, n_jobs=-1, num_leaves=31, objective=None,
+               random_state=123, reg_alpha=0.0, reg_lambda=0.0, subsample=1.0,
+               subsample_for_bin=200000, subsample_freq=0), feature_name=None, fit_kwargs={}, groups=None, label=False, plot_kwargs=None, save=False, scale=1, self=<pycaret.classification.oop.ClassificationExperiment object at 0x2871e9550>, system=True)
+2023-10-27 16:24:50,131:INFO:Checking exceptions
+2023-10-27 16:24:50,143:INFO:Preloading libraries
+2023-10-27 16:24:50,148:INFO:Copying training dataset
+2023-10-27 16:24:50,148:INFO:Plot type: error
+2023-10-27 16:24:50,278:INFO:Fitting Model
+2023-10-27 16:24:50,281:INFO:Scoring test/hold-out set
+2023-10-27 16:24:50,560:INFO:Visual Rendered Successfully
+2023-10-27 16:24:50,622:INFO:plot_model() successfully completed......................................
+2023-10-27 16:24:51,783:INFO:Initializing plot_model()
+2023-10-27 16:24:51,783:INFO:plot_model(plot=learning, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), verbose=False, display=None, display_format=None, estimator=LGBMClassifier(boosting_type='gbdt', class_weight=None, colsample_bytree=1.0,
+               importance_type='split', learning_rate=0.1, max_depth=-1,
+               min_child_samples=20, min_child_weight=0.001, min_split_gain=0.0,
+               n_estimators=100, n_jobs=-1, num_leaves=31, objective=None,
+               random_state=123, reg_alpha=0.0, reg_lambda=0.0, subsample=1.0,
+               subsample_for_bin=200000, subsample_freq=0), feature_name=None, fit_kwargs={}, groups=None, label=False, plot_kwargs=None, save=False, scale=1, self=<pycaret.classification.oop.ClassificationExperiment object at 0x2871e9550>, system=True)
+2023-10-27 16:24:51,784:INFO:Checking exceptions
+2023-10-27 16:24:51,799:INFO:Preloading libraries
+2023-10-27 16:24:51,805:INFO:Copying training dataset
+2023-10-27 16:24:51,805:INFO:Plot type: learning
+2023-10-27 16:24:51,938:INFO:Fitting Model
+2023-10-27 16:25:21,855:INFO:Initializing predict_model()
+2023-10-27 16:25:21,856:INFO:predict_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x2871e9550>, estimator=LGBMClassifier(boosting_type='gbdt', class_weight=None, colsample_bytree=1.0,
+               importance_type='split', learning_rate=0.1, max_depth=-1,
+               min_child_samples=20, min_child_weight=0.001, min_split_gain=0.0,
+               n_estimators=100, n_jobs=-1, num_leaves=31, objective=None,
+               random_state=123, reg_alpha=0.0, reg_lambda=0.0, subsample=1.0,
+               subsample_for_bin=200000, subsample_freq=0), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x28b7af9d0>)
+2023-10-27 16:25:21,856:INFO:Checking exceptions
+2023-10-27 16:25:21,856:INFO:Preloading libraries
+2023-10-27 16:25:22,361:INFO:Initializing plot_model()
+2023-10-27 16:25:22,361:INFO:plot_model(plot=pipeline, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), verbose=False, display=None, display_format=None, estimator=LGBMClassifier(boosting_type='gbdt', class_weight=None, colsample_bytree=1.0,
+               importance_type='split', learning_rate=0.1, max_depth=-1,
+               min_child_samples=20, min_child_weight=0.001, min_split_gain=0.0,
+               n_estimators=100, n_jobs=-1, num_leaves=31, objective=None,
+               random_state=123, reg_alpha=0.0, reg_lambda=0.0, subsample=1.0,
+               subsample_for_bin=200000, subsample_freq=0), feature_name=None, fit_kwargs={}, groups=None, label=False, plot_kwargs=None, save=False, scale=1, self=<pycaret.classification.oop.ClassificationExperiment object at 0x2871e9550>, system=True)
+2023-10-27 16:25:22,361:INFO:Checking exceptions
+2023-10-27 16:25:22,378:INFO:Preloading libraries
+2023-10-27 16:25:22,388:INFO:Copying training dataset
+2023-10-27 16:25:22,388:INFO:Plot type: pipeline
+2023-10-27 16:25:22,448:INFO:Visual Rendered Successfully
+2023-10-27 16:25:22,513:INFO:plot_model() successfully completed......................................
+2023-10-27 16:25:23,518:INFO:Initializing predict_model()
+2023-10-27 16:25:23,518:INFO:predict_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x2871e9550>, estimator=LGBMClassifier(boosting_type='gbdt', class_weight=None, colsample_bytree=1.0,
+               importance_type='split', learning_rate=0.1, max_depth=-1,
+               min_child_samples=20, min_child_weight=0.001, min_split_gain=0.0,
+               n_estimators=100, n_jobs=-1, num_leaves=31, objective=None,
+               random_state=123, reg_alpha=0.0, reg_lambda=0.0, subsample=1.0,
+               subsample_for_bin=200000, subsample_freq=0), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x1063d50d0>)
+2023-10-27 16:25:23,518:INFO:Checking exceptions
+2023-10-27 16:25:23,518:INFO:Preloading libraries
