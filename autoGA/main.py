@@ -9,6 +9,8 @@ from deap import algorithms
 from deap import gp
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, f1_score, recall_score
+from functools import partial
+import multiprocessing
 import numpy as np
 import pandas as pd
 
@@ -73,7 +75,8 @@ def individual_create():
     tmp = np.empty(14, dtype=int)
     # TODO do decision tree later
     # change this to (0, 2)
-    tmp[0] = random.randint(0, 1)
+    # tmp[0] = random.randint(0, 1)
+    tmp[0] = 0
     tmp[1] = random.choice([100, 200, 300])
     tmp[2] = random.randint(0, 2)
     if tmp[0] == 2:
@@ -111,11 +114,20 @@ def protected_div(left, right):
 
 def pset_create(tree_type: int):
     if tree_type == 0:
-        pset = gp.PrimitiveSetTyped("main", [type(X[col][0] for col in X)], float, "IN")
+        pset = gp.PrimitiveSetTyped(
+            "main", [type(X[col][0]) for col in X], np.float64, "IN"
+        )
         pset.addPrimitive(operator.add, [np.float64, np.float64], np.float64)
         pset.addPrimitive(operator.sub, [np.float64, np.float64], np.float64)
         pset.addPrimitive(operator.mul, [np.float64, np.float64], np.float64)
         pset.addPrimitive(protected_div, [np.float64, np.float64], np.float64)
+        # Add this constant to prevent no primitive found error
+        # This occurs because there may be an odd number of inputs and all the functions are binary
+        pset.addEphemeralConstant(
+            name="RAND",
+            ephemeral=partial(np.float64, random.random()),
+            ret_type=np.float64,
+        )
     elif tree_type == 1:
         pset = gp.PrimitiveSetTyped("main", [type(X[col][0] for col in X)], bool, "IN")
         pset.addPrimitive(operator.and_, [bool, bool], bool)
@@ -133,29 +145,34 @@ def pset_create(tree_type: int):
 
 def inner_evaluate(individual, tree_type, fitness_type, toolbox):
     func = toolbox.compile(expr=individual)
-    y_pred = [func(*data) for data in X_train.iterrows()]
+    y_pred = [func(*data) for _, data in X_train.iterrows()]
     y_labels = y.unique()
     # Output of arithmetic trees is float
     if tree_type == 0:
-        y_pred = map(lambda x: y_labels[0] if x > 0 else y_labels[1], y_pred)
+        y_pred = list(map(lambda x: y_labels[0] if x > 0 else y_labels[1], y_pred))
     elif tree_type == 1:
-        y_pred = map(lambda x: y_labels[0] if x else y_labels[1], y_pred)
+        y_pred = list(map(lambda x: y_labels[0] if x else y_labels[1], y_pred))
+    # TODO Implement for decision trees
     else:
         raise ValueError("tree_type should be in [0, 2]")
 
     if fitness_type == 0:
-        return accuracy_score(y_true=y_train, y_pred=y_pred)
+        ret = accuracy_score(y_true=y_train, y_pred=y_pred)
     elif fitness_type == 1:
-        return f1_score(y_train, y_pred)
+        ret = f1_score(y_train, y_pred)
     elif fitness_type == 2:
-        return (accuracy_score(y_train, y_pred) + f1_score(y_train, y_pred)) / 2
+        ret = (accuracy_score(y_train, y_pred) + f1_score(y_train, y_pred)) / 2
     elif fitness_type == 3:
         tmp = random.random()
-        return tmp * accuracy_score(y_train, y_pred) + (1 - tmp) * f1_score(
+        ret = tmp * accuracy_score(y_train, y_pred) + (1 - tmp) * f1_score(
             y_train, y_pred
         )
     elif fitness_type == 4:
-        return recall_score(y_train, y_pred)
+        ret = recall_score(y_train, y_pred)
+    else:
+        raise ValueError("fitness_type should be in [0, 4]")
+
+    return (ret,)
 
 
 def eaSimple(
@@ -227,44 +244,54 @@ def eval_autoga(individual):
     creator.create("InnerFitnessMax", base.Fitness, weights=(1.0,))
     creator.create("InnerIndividual", gp.PrimitiveTree, fitness=creator.InnerFitnessMax)
 
-    toolbox = base.Toolbox()
+    inner_toolbox = base.Toolbox()
 
     if individual[2] == 0:
-        toolbox.register("expr", gp.genFull, pset=pset, min_=2, max_=individual[3])
+        inner_toolbox.register(
+            "expr", gp.genFull, pset=pset, min_=2, max_=individual[3]
+        )
     elif individual[2] == 1:
-        toolbox.register("expr", gp.genGrow, pset=pset, min_=2, max_=individual[3])
+        inner_toolbox.register(
+            "expr", gp.genGrow, pset=pset, min_=2, max_=individual[3]
+        )
     elif individual[2] == 2:
-        toolbox.register(
+        inner_toolbox.register(
             "expr", gp.genHalfAndHalf, pset=pset, min_=2, max_=individual[3]
         )
     else:
         raise ValueError("tree_gen_method should be from [0, 1, 2]")
 
-    toolbox.register("individual", tools.initIterate, creator.Individual, toolbox.expr)
-    toolbox.register("population", tools.initRepeat, list, toolbox.individual)
-    toolbox.register("compile", gp.compile, pset=pset)
+    inner_toolbox.register(
+        "individual", tools.initIterate, creator.InnerIndividual, inner_toolbox.expr
+    )
+    inner_toolbox.register(
+        "population", tools.initRepeat, list, inner_toolbox.individual
+    )
+    inner_toolbox.register("compile", gp.compile, pset=pset)
 
-    toolbox.register(
+    inner_toolbox.register(
         "evaluate",
         inner_evaluate,
         fitness_type=individual[12],
-        toolbox=toolbox,
+        toolbox=inner_toolbox,
         tree_type=individual[0],
     )
     if individual[5] == 0:
-        toolbox.register("select", tools.selRoulette)
+        inner_toolbox.register("select", tools.selRoulette)
     elif individual[5] == 1:
-        toolbox.register("select", tools.selTournament, tournsize=individual[6])
+        inner_toolbox.register("select", tools.selTournament, tournsize=individual[6])
     else:
         raise ValueError("selection_method should be from [0, 1]")
 
-    toolbox.register("mate", gp.cxOnePoint)
-    toolbox.register("expr_mut", gp.genFull, min_=2, max_=individual[9])
+    inner_toolbox.register("mate", gp.cxOnePoint)
+    inner_toolbox.register("expr_mut", gp.genFull, min_=2, max_=individual[9])
 
     if individual[8] == 0:
-        toolbox.register("mutate", gp.mutUniform, expr=toolbox.expr_mut, pset=pset)
+        inner_toolbox.register(
+            "mutate", gp.mutUniform, expr=inner_toolbox.expr_mut, pset=pset
+        )
     elif individual[8] == 1:
-        toolbox.register("mutate", gp.mutShrink)
+        inner_toolbox.register("mutate", gp.mutShrink)
     else:
         raise ValueError("mut_type should be from [0, 1]")
 
@@ -298,16 +325,16 @@ def eval_autoga(individual):
     else:
         raise ValueError("op_combination should be in [0, 6]")
 
-    pop = toolbox.population(n=individual[1])
+    pop = inner_toolbox.population(n=individual[1])
     hof = tools.HallOfFame(1)
     stats = tools.Statistics(lambda ind: ind.fitness.values)
     stats.register("avg", np.mean)
     stats.register("std", np.std)
     stats.register("min", np.min)
     stats.register("max", np.max)
-    logbook = eaSimple(
+    pop, logbook = eaSimple(
         pop,
-        toolbox,
+        inner_toolbox,
         cxpb,
         mutpb,
         individual[13],
@@ -315,15 +342,30 @@ def eval_autoga(individual):
         halloffame=hof,
         use_varAnd=use_varAnd,
     )
-    return (sum(individual),)
+    func = gp.compile(hof[0], pset)
+    y_pred = [func(*data) for _, data in X_test.iterrows()]
+    y_labels = y_test.unique()
+    if individual[0] == 0:
+        y_pred = list(map(lambda x: y_labels[0] if x > 0 else y_labels[1], y_pred))
+    elif individual[0] == 1:
+        y_pred = list(map(lambda x: y_labels[0] if x else y_labels[1], y_pred))
+    # TODO Implement for decision trees
+    else:
+        raise ValueError("tree_type should be in [0, 2]")
+
+    del creator.InnerIndividual
+    del creator.InnerFitnessMax
+    return (accuracy_score(y_test, y_pred),)
 
 
 def main():
     random.seed(42)
+    pool = multiprocessing.Pool()
 
     creator.create("FitnessMax", base.Fitness, weights=(1.0,))
     creator.create("Individual", list, fitness=creator.FitnessMax)
     toolbox = base.Toolbox()
+    toolbox.register("map", pool.map)
     toolbox.register(
         "individual", tools.initIterate, creator.Individual, individual_create
     )
@@ -333,7 +375,7 @@ def main():
     toolbox.register("mutate", mutFlipValue, indpb=0.10)
     # TODO Implement elitism
     toolbox.register("select", tools.selRoulette)
-    pop = toolbox.population(n=20)
+    pop = toolbox.population(n=1)
     hof = tools.HallOfFame(1)
     stats = tools.Statistics(lambda ind: ind.fitness.values)
     stats.register("avg", np.mean)
@@ -346,7 +388,7 @@ def main():
         toolbox,
         cxpb=0.5,
         mutpb=0.2,
-        ngen=50,
+        ngen=1,
         stats=stats,
         halloffame=hof,
         verbose=True,
