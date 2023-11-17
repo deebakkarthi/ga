@@ -77,7 +77,7 @@ def individual_create():
     # change this to (0, 2)
     # tmp[0] = random.randint(0, 1)
     tmp[0] = 0
-    tmp[1] = random.choice([100, 200, 300])
+    tmp[1] = random.choice([10, 20, 30])
     tmp[2] = random.randint(0, 2)
     if tmp[0] == 2:
         tmp[3] = random.randint(2, 8)
@@ -358,7 +358,7 @@ def eval_autoga(individual):
     return (accuracy_score(y_test, y_pred),)
 
 
-def main():
+if __name__ == "__main__":
     random.seed(42)
     pool = multiprocessing.Pool()
 
@@ -375,7 +375,7 @@ def main():
     toolbox.register("mutate", mutFlipValue, indpb=0.10)
     # TODO Implement elitism
     toolbox.register("select", tools.selRoulette)
-    pop = toolbox.population(n=1)
+    pop = toolbox.population(n=5)
     hof = tools.HallOfFame(1)
     stats = tools.Statistics(lambda ind: ind.fitness.values)
     stats.register("avg", np.mean)
@@ -393,8 +393,4 @@ def main():
         halloffame=hof,
         verbose=True,
     )
-    return
-
-
-if __name__ == "__main__":
-    main()
+    print(hof[0])
